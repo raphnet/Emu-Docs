@@ -11,3 +11,5 @@ In the future, we are planning to create a [GitHub pages front-end](https://page
 http://emu-docs.org/
 
 http://www.zophar.net/documents/
+
+https://github.com/franckverrot/EmulationResources
