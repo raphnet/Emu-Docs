@@ -20,8 +20,6 @@ https://github.com/franckverrot/EmulationResources
 
 2. Consoles in the root directory should be named by the full name e.g. "Playstation 2" instead of "PS2"
 
-3. Test ROMs are welcome and should be placed under a folder called "test_roms"
+3. Test ROMs are welcome and should be placed under a folder called "test_roms". Documentation about certain games or ROM hacking should be placed under a folder called "game_documentation". SDKs/DDKs should be placed under a folder called "SDK" or "DDK".
 
-4. Documentation about certain games or ROM hacking should be placed under a folder called "game_documentation"
-
-5. Inside each folder, there should be a README.md describing the files in that directory
+4. Inside each folder, there should be a README.md describing the files in that directory
