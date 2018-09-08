@@ -10,22 +10,22 @@ fullsnes - nocash SNES hardware specifications, extracted from no$sns v1.5
 <p>
 
 <b>SNES Hardware Specifications</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesiomap">SNES I/O Map</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesmemory">SNES Memory</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesdmatransfers">SNES DMA Transfers</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespictureprocessingunitppu">SNES Picture Processing Unit (PPU)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaudioprocessingunitapu">SNES Audio Processing Unit (APU)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesmathsmultiplydivide">SNES Maths Multiply/Divide</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollers">SNES Controllers</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartridges">SNES Cartridges</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#sneshotelboxesandarcademachines">SNES Hotel Boxes and Arcade Machines</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesunpredictablethings">SNES Unpredictable Things</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snestimings">SNES Timings</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinouts">SNES Pinouts</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#cpu65xxmicroprocessor">CPU 65XX Microprocessor</a><br>
+<a href="#snesiomap">SNES I/O Map</a><br>
+<a href="#snesmemory">SNES Memory</a><br>
+<a href="#snesdmatransfers">SNES DMA Transfers</a><br>
+<a href="#snespictureprocessingunitppu">SNES Picture Processing Unit (PPU)</a><br>
+<a href="#snesaudioprocessingunitapu">SNES Audio Processing Unit (APU)</a><br>
+<a href="#snesmathsmultiplydivide">SNES Maths Multiply/Divide</a><br>
+<a href="#snescontrollers">SNES Controllers</a><br>
+<a href="#snescartridges">SNES Cartridges</a><br>
+<a href="#sneshotelboxesandarcademachines">SNES Hotel Boxes and Arcade Machines</a><br>
+<a href="#snesunpredictablethings">SNES Unpredictable Things</a><br>
+<a href="#snestimings">SNES Timings</a><br>
+<a href="#snespinouts">SNES Pinouts</a><br>
+<a href="#cpu65xxmicroprocessor">CPU 65XX Microprocessor</a><br>
 <br>
 <b>About</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#aboutcredits">About/Credits</a><br>
+<a href="#aboutcredits">About/Credits</a><br>
 <br>
 <br>
 
@@ -192,7 +192,7 @@ left unchanged upon Reset (but do contain the specified value upon initial
 Power-up).<br>
 <br>
 <b>Audio Registers (controlled by the SPC700 CPU, not by the Main CPU)</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesapumemoryandiomap">SNES APU Memory and I/O Map</a><br>
+<a href="#snesapumemoryandiomap">SNES APU Memory and I/O Map</a><br>
 <br>
 <b>Expansion Overview</b><br>
 <table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td><pre>  0000h-003Fh  Cheat Device: Pro Action Replay 1-3: I/O Ports; overlapping WRAM
@@ -251,22 +251,22 @@ Power-up).<br>
   <a name="snesmemory"></a>&nbsp;
   SNES Memory
 </font></td></tr></tbody></table><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesmemorymap">SNES Memory Map</a><br>
+<a href="#snesmemorymap">SNES Memory Map</a><br>
 <br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesmemorycontrol">SNES Memory Control</a><br>
+<a href="#snesmemorycontrol">SNES Memory Control</a><br>
 <br>
 <b>Work RAM (WRAM)</b><br>
 Work RAM is mapped directly to the CPU bus, and can be additionally accessed
 indirectly via I/O ports (mainly for DMA transfer purposes).<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesmemoryworkramaccess">SNES Memory Work RAM Access</a><br>
+<a href="#snesmemoryworkramaccess">SNES Memory Work RAM Access</a><br>
 <br>
 <b>Video Memory (OAM/VRAM/CGRAM)</b><br>
 All video memory can be accessed only during V-Blank, or Forced Blank.<br>
 Video memory isn't mapped to the CPU bus, and can be accessed only via I/O
 ports (for bigger transfers, this would be usually done via DMA).<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesmemoryoamaccessspriteattributes">SNES Memory OAM Access (Sprite Attributes)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesmemoryvramaccesstileandbgmap">SNES Memory VRAM Access (Tile and BG Map)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesmemorycgramaccesspalettememory">SNES Memory CGRAM Access (Palette Memory)</a><br>
+<a href="#snesmemoryoamaccessspriteattributes">SNES Memory OAM Access (Sprite Attributes)</a><br>
+<a href="#snesmemoryvramaccesstileandbgmap">SNES Memory VRAM Access (Tile and BG Map)</a><br>
+<a href="#snesmemorycgramaccesspalettememory">SNES Memory CGRAM Access (Palette Memory)</a><br>
 Access during H-Blank doesn't seem to work too well - it is possible to change
 palette entries during H-Blank, but seems to work only during a few clock
 cycles, not during the full H-blank period.<br>
@@ -277,13 +277,13 @@ Sound RAM cannot be directly accessed by the Main CPU (nor by DMA). Instead,
 data transfers must be done by using some CPU-to-CPU software communication
 protocol. Upon Reset, this done by a Boot-ROM on the SPC700 side. For details,
 see:<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesapumaincpucommunicationport">SNES APU Main CPU Communication Port</a><br>
+<a href="#snesapumaincpucommunicationport">SNES APU Main CPU Communication Port</a><br>
 <br>
 <b>DMA Transfers</b><br>
 DMA can be used to quickly transfer memory blocks to/from most memory locations
 (except Sound RAM isn't accessible via DMA, and WRAM-to-WRAM transfers don't
 work).<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesdmatransfers">SNES DMA Transfers</a><br>
+<a href="#snesdmatransfers">SNES DMA Transfers</a><br>
 <br>
 <br>
 
@@ -330,7 +330,7 @@ Additional memory (not mapped to CPU addresses) (accessible only via I/O):<br>
   6000h-7FFFh  Expansion                                            3.58MHz
 </pre></td></tr></tbody></table>
 For details on the separate I/O ports (and Expansion stuff), see:<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesiomap">SNES I/O Map</a><br>
+<a href="#snesiomap">SNES I/O Map</a><br>
 <br>
 <b>Cartridge ROM Capacity</b><br>
 The 24bit address bus allows to address 16MB, but wide parts are occupied by
@@ -417,7 +417,7 @@ ROMs/EPROMs. 2.68MHz memory requires 200ns or faster ROMs/EPROMs.<br>
 </pre></td></tr></tbody></table>
 Programs that do use the 3.58MHz setting should also indicate this in the
 Cartridge header at [FFD5h].Bit4.<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartridgeromheader">SNES Cartridge ROM Header</a><br>
+<a href="#snescartridgeromheader">SNES Cartridge ROM Header</a><br>
 <br>
 <b>Forced Blank</b><br>
 Allows to access video memory at any time. See INIDISP Bit7, Port 2100h.<br>
@@ -468,7 +468,7 @@ However, there are a few tricks to get "3.5MHz RAM":<br>
 The B-Bus feature with auto-increment is making it fairly easy to boot the SNES
 without any ROM/EPROM by simply writing program bytes to WRAM (and mirroring it
 to the Program and Reset vector to ROM area):<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesxboouploadwramboot">SNES Xboo Upload (WRAM Boot)</a><br>
+<a href="#snesxboouploadwramboot">SNES Xboo Upload (WRAM Boot)</a><br>
 Interestingly, the WRAM-to-ROM Area mirroring seems to be stable even when ROM
 Area is set to 3.5MHz Access Time - so it's unclear why Nintendo has restricted
 normal WRAM Access to 2.6MHz - maybe some WRAM chips are slower than others, or
@@ -514,7 +514,7 @@ The address is automatically incremented after every read or write access.<br>
 OAM Size is 220h bytes (addresses 220h..3FFh are mirrors of 200h..21Fh).<br>
 <br>
 <b>OAM Content</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesppuspritesobjs">SNES PPU Sprites (OBJs)</a><br>
+<a href="#snesppuspritesobjs">SNES PPU Sprites (OBJs)</a><br>
 <br>
 <br>
 
@@ -595,7 +595,7 @@ increasing addresses (as a workaround: issue a dummy-read that ignores the 1st
 or 2nd value).<br>
 <br>
 <b>VRAM Content</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesppuvideomemoryvram">SNES PPU Video Memory (VRAM)</a><br>
+<a href="#snesppuvideomemoryvram">SNES PPU Video Memory (VRAM)</a><br>
 <br>
 <br>
 
@@ -622,7 +622,7 @@ Reads and Writes to EVEN and ODD byte-addresses work as follows:<br>
 The address is automatically incremented after every read or write access.<br>
 <br>
 <b>CGRAM Content (and CGRAM-less Direct Color mode)</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesppucolorpalettememorycgramanddirectcolors">SNES PPU Color Palette Memory (CGRAM) and Direct Colors</a><br>
+<a href="#snesppucolorpalettememorycgramanddirectcolors">SNES PPU Color Palette Memory (CGRAM) and Direct Colors</a><br>
 <br>
 <br>
 
@@ -632,26 +632,26 @@ The address is automatically incremented after every read or write access.<br>
   SNES DMA Transfers
 </font></td></tr></tbody></table><br>
 The SNES includes eight DMA channels, which can be used for H-DMA or GP-DMA.<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesdmaandhdmastartenableregisters">SNES DMA and HDMA Start/Enable Registers</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesdmaandhdmachannel07registers">SNES DMA and HDMA Channel 0..7 Registers</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesdmaandhdmanotes">SNES DMA and HDMA Notes</a><br>
+<a href="#snesdmaandhdmastartenableregisters">SNES DMA and HDMA Start/Enable Registers</a><br>
+<a href="#snesdmaandhdmachannel07registers">SNES DMA and HDMA Channel 0..7 Registers</a><br>
+<a href="#snesdmaandhdmanotes">SNES DMA and HDMA Notes</a><br>
 <br>
 <b>H-DMA (H-Blank DMA)</b><br>
 H-DMA transfers are automatically invoked on H-Blank, each H-DMA is limited to
 a single unit (max 4 bytes) per scanline. This is commonly used to manipulate
 PPU I/O ports (eg. to change scroll offsets). Related registers can found here:<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesiomap">SNES I/O Map</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespictureprocessingunitppu">SNES Picture Processing Unit (PPU)</a><br>
+<a href="#snesiomap">SNES I/O Map</a><br>
+<a href="#snespictureprocessingunitppu">SNES Picture Processing Unit (PPU)</a><br>
 <br>
 <b>GP-DMA (General Purpose DMA)</b><br>
 GP-DMA can manually invoked by software, allowing to transfer larger amounts of
 data (max 10000h bytes). This is commonly used to transfer WRAM or ROM (on
 A-Bus side) to/from WRAM, OAM, VRAM, CGRAM (on B-Bus side). Related registers
 are:<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesmemoryworkramaccess">SNES Memory Work RAM Access</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesmemoryoamaccessspriteattributes">SNES Memory OAM Access (Sprite Attributes)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesmemoryvramaccesstileandbgmap">SNES Memory VRAM Access (Tile and BG Map)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesmemorycgramaccesspalettememory">SNES Memory CGRAM Access (Palette Memory)</a><br>
+<a href="#snesmemoryworkramaccess">SNES Memory Work RAM Access</a><br>
+<a href="#snesmemoryoamaccessspriteattributes">SNES Memory OAM Access (Sprite Attributes)</a><br>
+<a href="#snesmemoryvramaccesstileandbgmap">SNES Memory VRAM Access (Tile and BG Map)</a><br>
+<a href="#snesmemorycgramaccesspalettememory">SNES Memory CGRAM Access (Palette Memory)</a><br>
 <br>
 <br>
 <br>
@@ -861,31 +861,31 @@ seems to decode DMA channel numbers; possibly by sensing writes to 420Bh?).<br>
   <a name="snespictureprocessingunitppu"></a>&nbsp;
   SNES Picture Processing Unit (PPU)
 </font></td></tr></tbody></table><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesppucontrol">SNES PPU Control</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesppubgcontrol">SNES PPU BG Control</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesppurotationscaling">SNES PPU Rotation/Scaling</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesppuwindow">SNES PPU Window</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesppucolormath">SNES PPU Color-Math</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespputimersandstatus">SNES PPU Timers and Status</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesppuinterrupts">SNES PPU Interrupts</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesppuresolution">SNES PPU Resolution</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesppuoffsetpertilemode">SNES PPU Offset-Per-Tile Mode</a><br>
+<a href="#snesppucontrol">SNES PPU Control</a><br>
+<a href="#snesppubgcontrol">SNES PPU BG Control</a><br>
+<a href="#snesppurotationscaling">SNES PPU Rotation/Scaling</a><br>
+<a href="#snesppuwindow">SNES PPU Window</a><br>
+<a href="#snesppucolormath">SNES PPU Color-Math</a><br>
+<a href="#snespputimersandstatus">SNES PPU Timers and Status</a><br>
+<a href="#snesppuinterrupts">SNES PPU Interrupts</a><br>
+<a href="#snesppuresolution">SNES PPU Resolution</a><br>
+<a href="#snesppuoffsetpertilemode">SNES PPU Offset-Per-Tile Mode</a><br>
 <br>
 <b>Video Memory (OAM/VRAM/CGRAM)</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesppuspritesobjs">SNES PPU Sprites (OBJs)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesppuvideomemoryvram">SNES PPU Video Memory (VRAM)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesppucolorpalettememorycgramanddirectcolors">SNES PPU Color Palette Memory (CGRAM) and Direct Colors</a><br>
+<a href="#snesppuspritesobjs">SNES PPU Sprites (OBJs)</a><br>
+<a href="#snesppuvideomemoryvram">SNES PPU Video Memory (VRAM)</a><br>
+<a href="#snesppucolorpalettememorycgramanddirectcolors">SNES PPU Color Palette Memory (CGRAM) and Direct Colors</a><br>
 All video memory can be accessed only during V-Blank, or Forced Blank.<br>
 Video memory isn't mapped to the CPU bus, and be accessed only via I/O ports.<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesmemoryoamaccessspriteattributes">SNES Memory OAM Access (Sprite Attributes)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesmemoryvramaccesstileandbgmap">SNES Memory VRAM Access (Tile and BG Map)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesmemorycgramaccesspalettememory">SNES Memory CGRAM Access (Palette Memory)</a><br>
+<a href="#snesmemoryoamaccessspriteattributes">SNES Memory OAM Access (Sprite Attributes)</a><br>
+<a href="#snesmemoryvramaccesstileandbgmap">SNES Memory VRAM Access (Tile and BG Map)</a><br>
+<a href="#snesmemorycgramaccesspalettememory">SNES Memory CGRAM Access (Palette Memory)</a><br>
 The above OAM/VRAM/CGRAM I/O ports are usually accessed via DMA,<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesdmatransfers">SNES DMA Transfers</a><br>
+<a href="#snesdmatransfers">SNES DMA Transfers</a><br>
 <br>
 <b>Pinouts</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaudiovideoconnectorpinouts">SNES Audio/Video Connector Pinouts</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutsppuchips">SNES Pinouts PPU Chips</a><br>
+<a href="#snesaudiovideoconnectorpinouts">SNES Audio/Video Connector Pinouts</a><br>
+<a href="#snespinoutsppuchips">SNES Pinouts PPU Chips</a><br>
 <br>
 <b>Background Priority Chart</b><br>
 <table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td><pre>  Mode0    Mode1    Mode2    Mode3    Mode4    Mode5    Mode6    Mode7
@@ -1130,7 +1130,7 @@ BG map size (do "screen over" handling).<br>
 <br>
 <b>M7A/M7B Port Notes</b><br>
 Port 211Bh/211Ch can be also used for general purpose math multiply:<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesmathsmultiplydivide">SNES Maths Multiply/Divide</a><br>
+<a href="#snesmathsmultiplydivide">SNES Maths Multiply/Divide</a><br>
 When in BG Mode 7, general purpose multiply works only during V-Blank and
 Forced-Blank. During drawing period at SCREEN.Y=0..224/239 (including
 SCREEN.Y=0, and during all 340 dots including H-Blank), MPYL/M/H receives two
@@ -1195,7 +1195,7 @@ used as BG2 pixel color).<br>
 </pre></td></tr></tbody></table>
 <br>
 <b>Accessing OAM</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesmemoryoamaccessspriteattributes">SNES Memory OAM Access (Sprite Attributes)</a><br>
+<a href="#snesmemoryoamaccessspriteattributes">SNES Memory OAM Access (Sprite Attributes)</a><br>
 <br>
 <b>OAM (Object Attribute Memory)</b><br>
 Contains data for 128 OBJs. OAM Size is 512+32 Bytes. The first part (512
@@ -1307,7 +1307,7 @@ processing carry-outs. For example:<br>
 </pre></td></tr></tbody></table>
 <br>
 <b>Accessing VRAM</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesmemoryvramaccesstileandbgmap">SNES Memory VRAM Access (Tile and BG Map)</a><br>
+<a href="#snesmemoryvramaccesstileandbgmap">SNES Memory VRAM Access (Tile and BG Map)</a><br>
 <br>
 <br>
 
@@ -1323,7 +1323,7 @@ processing carry-outs. For example:<br>
   4-0   Red
 </pre></td></tr></tbody></table>
 For accessing CGRAM, see:<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesmemorycgramaccesspalettememory">SNES Memory CGRAM Access (Palette Memory)</a><br>
+<a href="#snesmemorycgramaccesspalettememory">SNES Memory CGRAM Access (Palette Memory)</a><br>
 <br>
 <b>CGRAM Palette Indices</b><br>
 <table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td><pre>  00h      Main Backdrop color (used when all BG/OBJ pixels are transparent)
@@ -1612,9 +1612,9 @@ offscreen).<br>
 Most games support software calibration. The only exception is M.A.C.S. which
 requires mechanical hardware calibration (assisted by a test screen, activated
 by pressing Button A, and then Select Button on joypad 1).<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollerssuperscopelightgun">SNES Controllers SuperScope (Lightgun)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollerskonamijustifierlightgun">SNES Controllers Konami Justifier (Lightgun)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersmacslightgun">SNES Controllers M.A.C.S. (Lightgun)</a><br>
+<a href="#snescontrollerssuperscopelightgun">SNES Controllers SuperScope (Lightgun)</a><br>
+<a href="#snescontrollerskonamijustifierlightgun">SNES Controllers Konami Justifier (Lightgun)</a><br>
+<a href="#snescontrollersmacslightgun">SNES Controllers M.A.C.S. (Lightgun)</a><br>
 <br>
 <br>
 
@@ -1830,29 +1830,29 @@ XXX - Under construction (see Anomie's docs for now)<br>
   SNES Audio Processing Unit (APU)
 </font></td></tr></tbody></table><br>
 <b>Overview</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesapumemoryandiomap">SNES APU Memory and I/O Map</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesapublockdiagram">SNES APU Block Diagram</a><br>
+<a href="#snesapumemoryandiomap">SNES APU Memory and I/O Map</a><br>
+<a href="#snesapublockdiagram">SNES APU Block Diagram</a><br>
 <br>
 <b>SPC700 CPU</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesapuspc700cpuoverview">SNES APU SPC700 CPU Overview</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesapuspc700cpuloadstorecommands">SNES APU SPC700 CPU Load/Store Commands</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesapuspc700cpualucommands">SNES APU SPC700 CPU ALU Commands</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesapuspc700cpujumpcontrolcommands">SNES APU SPC700 CPU Jump/Control Commands</a><br>
+<a href="#snesapuspc700cpuoverview">SNES APU SPC700 CPU Overview</a><br>
+<a href="#snesapuspc700cpuloadstorecommands">SNES APU SPC700 CPU Load/Store Commands</a><br>
+<a href="#snesapuspc700cpualucommands">SNES APU SPC700 CPU ALU Commands</a><br>
+<a href="#snesapuspc700cpujumpcontrolcommands">SNES APU SPC700 CPU Jump/Control Commands</a><br>
 <br>
 <b>I/O Ports</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesapuspc700ioports">SNES APU SPC700 I/O Ports</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesapumaincpucommunicationport">SNES APU Main CPU Communication Port</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesapudspbrrsamples">SNES APU DSP BRR Samples</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesapudspbrrpitch">SNES APU DSP BRR Pitch</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesapudspadsrgainenvelope">SNES APU DSP ADSR/Gain Envelope</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesapudspvolumeregisters">SNES APU DSP Volume Registers</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesapudspcontrolregisters">SNES APU DSP Control Registers</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesapudspechoregisters">SNES APU DSP Echo Registers</a><br>
+<a href="#snesapuspc700ioports">SNES APU SPC700 I/O Ports</a><br>
+<a href="#snesapumaincpucommunicationport">SNES APU Main CPU Communication Port</a><br>
+<a href="#snesapudspbrrsamples">SNES APU DSP BRR Samples</a><br>
+<a href="#snesapudspbrrpitch">SNES APU DSP BRR Pitch</a><br>
+<a href="#snesapudspadsrgainenvelope">SNES APU DSP ADSR/Gain Envelope</a><br>
+<a href="#snesapudspvolumeregisters">SNES APU DSP Volume Registers</a><br>
+<a href="#snesapudspcontrolregisters">SNES APU DSP Control Registers</a><br>
+<a href="#snesapudspechoregisters">SNES APU DSP Echo Registers</a><br>
 <br>
 <b>Pinouts/Misc</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesapulowleveltimings">SNES APU Low Level Timings</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaudiovideoconnectorpinouts">SNES Audio/Video Connector Pinouts</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutsapuchips">SNES Pinouts APU Chips</a><br>
+<a href="#snesapulowleveltimings">SNES APU Low Level Timings</a><br>
+<a href="#snesaudiovideoconnectorpinouts">SNES Audio/Video Connector Pinouts</a><br>
+<a href="#snespinoutsapuchips">SNES Pinouts APU Chips</a><br>
 <br>
 <br>
 
@@ -3252,7 +3252,7 @@ See Ports 211Bh-211Ch.<br>
 <br>
 <b>Notes</b><br>
 Some cartridges contain co-processors with further math functions:<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartridges">SNES Cartridges</a><br>
+<a href="#snescartridges">SNES Cartridges</a><br>
 <br>
 <br>
 
@@ -3262,42 +3262,42 @@ Some cartridges contain co-processors with further math functions:<br>
   SNES Controllers
 </font></td></tr></tbody></table><br>
 <b>I/O Ports</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersioportsautomaticreading">SNES Controllers I/O Ports - Automatic Reading</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersioportsmanualreading">SNES Controllers I/O Ports - Manual Reading</a><br>
+<a href="#snescontrollersioportsautomaticreading">SNES Controllers I/O Ports - Automatic Reading</a><br>
+<a href="#snescontrollersioportsmanualreading">SNES Controllers I/O Ports - Manual Reading</a><br>
 <br>
 <b>Controller IDs</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollershardwareidcodes">SNES Controllers Hardware ID Codes</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersdetectingcontrollersupportofromimages">SNES Controllers Detecting Controller Support of ROM-Images</a><br>
+<a href="#snescontrollershardwareidcodes">SNES Controllers Hardware ID Codes</a><br>
+<a href="#snescontrollersdetectingcontrollersupportofromimages">SNES Controllers Detecting Controller Support of ROM-Images</a><br>
 <br>
 <b>Standard Controllers</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersjoypad">SNES Controllers Joypad</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersmousetwobuttonmouse">SNES Controllers Mouse (Two-button Mouse)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersmultiplayer5mp5fiveplayeradaptor">SNES Controllers Multiplayer 5 (MP5) (Five Player Adaptor)</a><br>
+<a href="#snescontrollersjoypad">SNES Controllers Joypad</a><br>
+<a href="#snescontrollersmousetwobuttonmouse">SNES Controllers Mouse (Two-button Mouse)</a><br>
+<a href="#snescontrollersmultiplayer5mp5fiveplayeradaptor">SNES Controllers Multiplayer 5 (MP5) (Five Player Adaptor)</a><br>
 <br>
 <b>Light Guns</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollerssuperscopelightgun">SNES Controllers SuperScope (Lightgun)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollerskonamijustifierlightgun">SNES Controllers Konami Justifier (Lightgun)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersmacslightgun">SNES Controllers M.A.C.S. (Lightgun)</a><br>
+<a href="#snescontrollerssuperscopelightgun">SNES Controllers SuperScope (Lightgun)</a><br>
+<a href="#snescontrollerskonamijustifierlightgun">SNES Controllers Konami Justifier (Lightgun)</a><br>
+<a href="#snescontrollersmacslightgun">SNES Controllers M.A.C.S. (Lightgun)</a><br>
 <br>
 <b>Other controllers</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollerstwintap">SNES Controllers Twin Tap</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersmiraclepiano">SNES Controllers Miracle Piano</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersnttdatapadjoypadwithnumerickeypad">SNES Controllers NTT Data Pad (joypad with numeric keypad)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersxbandkeyboard">SNES Controllers X-Band Keyboard</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollerstiltmotionsensors">SNES Controllers Tilt/Motion Sensors</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollerslasabirdiegolfclub">SNES Controllers Lasabirdie (golf club)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersexertainmentbicycleexercisingmachine">SNES Controllers Exertainment (bicycle exercising machine)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollerspachinko">SNES Controllers Pachinko</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersotherinputs">SNES Controllers Other Inputs</a><br>
+<a href="#snescontrollerstwintap">SNES Controllers Twin Tap</a><br>
+<a href="#snescontrollersmiraclepiano">SNES Controllers Miracle Piano</a><br>
+<a href="#snescontrollersnttdatapadjoypadwithnumerickeypad">SNES Controllers NTT Data Pad (joypad with numeric keypad)</a><br>
+<a href="#snescontrollersxbandkeyboard">SNES Controllers X-Band Keyboard</a><br>
+<a href="#snescontrollerstiltmotionsensors">SNES Controllers Tilt/Motion Sensors</a><br>
+<a href="#snescontrollerslasabirdiegolfclub">SNES Controllers Lasabirdie (golf club)</a><br>
+<a href="#snescontrollersexertainmentbicycleexercisingmachine">SNES Controllers Exertainment (bicycle exercising machine)</a><br>
+<a href="#snescontrollerspachinko">SNES Controllers Pachinko</a><br>
+<a href="#snescontrollersotherinputs">SNES Controllers Other Inputs</a><br>
 <br>
 <b>Other devices that connect to the controller port</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaddonturbofileexternalbackupmemoryforstoringgamepositions">SNES Add-On Turbo File (external backup memory for storing game positions)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaddonbarcodebattlerbarcodereader">SNES Add-On Barcode Battler (barcode reader)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaddonsfcmodemforjrapat">SNES Add-On SFC Modem (for JRA PAT)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaddonvoicekunirtransmitterreceiverforusewithcdplayers">SNES Add-On Voice-Kun (IR-transmitter/receiver for use with CD Players)</a><br>
+<a href="#snesaddonturbofileexternalbackupmemoryforstoringgamepositions">SNES Add-On Turbo File (external backup memory for storing game positions)</a><br>
+<a href="#snesaddonbarcodebattlerbarcodereader">SNES Add-On Barcode Battler (barcode reader)</a><br>
+<a href="#snesaddonsfcmodemforjrapat">SNES Add-On SFC Modem (for JRA PAT)</a><br>
+<a href="#snesaddonvoicekunirtransmitterreceiverforusewithcdplayers">SNES Add-On Voice-Kun (IR-transmitter/receiver for use with CD Players)</a><br>
 <br>
 <b>Pinouts</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollerspinouts">SNES Controllers Pinouts</a><br>
+<a href="#snescontrollerspinouts">SNES Controllers Pinouts</a><br>
 <br>
 <br>
 
@@ -3566,7 +3566,7 @@ so, ie. with Y=16bit, and address=24bit).<br>
 Some ROM-images do contain information about supported controllers in NSRT
 Headers. In practice, most ROM-images don't have that header (but can be
 "upgraded" by Nach's NSRT tool).<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartridgeromimageheadersandfileextensions">SNES Cartridge ROM-Image Headers and File Extensions</a><br>
+<a href="#snescartridgeromimageheadersandfileextensions">SNES Cartridge ROM-Image Headers and File Extensions</a><br>
 The NSRT format isn't officially documented. The official way to create headers
 seems to be to contact the author (Nach), ask him to add controller flags for a
 specific game, download the updated version of the NSRT tool, use it to update
@@ -3685,7 +3685,7 @@ mouse should not be connected to Multiplayer 5 adaptors (which allow only 17mA
 per controller, whilst the mouse requires 50mA).<br>
 <br>
 <b>Supported Games</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersmousegames">SNES Controllers Mouse Games</a><br>
+<a href="#snescontrollersmousegames">SNES Controllers Mouse Games</a><br>
 <br>
 <b>Mouse Bits</b><br>
 <table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td><pre>  1st..8th     Unused       (always 0=High)
@@ -3893,8 +3893,8 @@ registers. With 2 MP5 units, one could actually create an 8-player game.<br>
 <b>Supported/Unsupported Games/Hardware</b><br>
 The Multiplayer is supported by more than 100 games, but incompatible with
 almost everything except normal joypads.<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersmultiplayer5unsupportedhardware">SNES Controllers Multiplayer 5 - Unsupported Hardware</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersmultiplayer5supportedgames">SNES Controllers Multiplayer 5 - Supported Games</a><br>
+<a href="#snescontrollersmultiplayer5unsupportedhardware">SNES Controllers Multiplayer 5 - Unsupported Hardware</a><br>
+<a href="#snescontrollersmultiplayer5supportedgames">SNES Controllers Multiplayer 5 - Supported Games</a><br>
 <br>
 <b>Multitap/Multiplayer Adaptor Versions</b><br>
 <table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td><pre>  2or3? Way Multiplay Adaptor (Gamester LMP) (with only 2 (or 3?) sockets)
@@ -4276,7 +4276,7 @@ Takes six "AA" batteries. Which do reportedly last only for a few hours.<br>
 'n' is Noise.<br>
 <br>
 For obtaining the H/V position&amp; latch flag (Ports 213Ch,213Dh,213Fh), see:<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespputimersandstatus">SNES PPU Timers and Status</a><br>
+<a href="#snespputimersandstatus">SNES PPU Timers and Status</a><br>
 <br>
 The SuperScope has two modes of operation: normal mode and turbo mode. The
 current mode is controlled by a switch on the unit, and is indicated by the 't'
@@ -4405,7 +4405,7 @@ pointed at the screen or not.<br>
 Data2 is presumably not connected, but this is not known for sure.<br>
 <br>
 For obtaining the H/V position&amp; latch flag (Ports 213Ch,213Dh,213Fh), see:<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespputimersandstatus">SNES PPU Timers and Status</a><br>
+<a href="#snespputimersandstatus">SNES PPU Timers and Status</a><br>
 <br>
 Nardz: "Actually when I was a kid, I bought the SNES Justifier Battle Clash
 package. The Weird thing about it is that The package had A Sega Justifier in
@@ -4449,7 +4449,7 @@ That is, only a single bit (no serial data transfer with CLK/STB signals). A
 standard joypad attached to 1st controller port allows to calibrate the
 lightpen (via Select button).<br>
 For obtaining the H/V position&amp; latch flag (Ports 213Ch,213Dh,213Fh), see:<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespputimersandstatus">SNES PPU Timers and Status</a><br>
+<a href="#snespputimersandstatus">SNES PPU Timers and Status</a><br>
 <br>
 <b>SNES Software</b><br>
 <table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td><pre>  MACS Basic Rifle Marksmanship v1.1e (v1.2a) (1993) Sculptured Software (US)
@@ -4497,10 +4497,10 @@ latter case, there &lt;should&gt; be also a unique Extended ID value.<br>
   SNES Controllers Miracle Piano
 </font></td></tr></tbody></table><br>
 <b>Miracle Piano Teaching System (The Software Toolworks)</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersmiraclepianocontrollerport">SNES Controllers Miracle Piano Controller Port</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersmiraclepianomidicommands">SNES Controllers Miracle Piano MIDI Commands</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersmiraclepianoinstruments">SNES Controllers Miracle Piano Instruments</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersmiraclepinoutsandcomponentlist">SNES Controllers Miracle Pinouts and Component List</a><br>
+<a href="#snescontrollersmiraclepianocontrollerport">SNES Controllers Miracle Piano Controller Port</a><br>
+<a href="#snescontrollersmiraclepianomidicommands">SNES Controllers Miracle Piano MIDI Commands</a><br>
+<a href="#snescontrollersmiraclepianoinstruments">SNES Controllers Miracle Piano Instruments</a><br>
+<a href="#snescontrollersmiraclepinoutsandcomponentlist">SNES Controllers Miracle Pinouts and Component List</a><br>
 <table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td><pre>   __ _________________________________________________________ __
   |  |::::::::::::    MIRACLE      .. .. .. .. ..  ::::::::::::|  |
   |  |::::::::::::                 .. .. .. .. ..  ::::::::::::|  |
@@ -4765,7 +4765,7 @@ internet.<br>
   SNES Controllers NTT Data Pad (joypad with numeric keypad)
 </font></td></tr></tbody></table><br>
 Special joypad with numeric keypad, for use with SFC Modem:<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaddonsfcmodemforjrapat">SNES Add-On SFC Modem (for JRA PAT)</a><br>
+<a href="#snesaddonsfcmodemforjrapat">SNES Add-On SFC Modem (for JRA PAT)</a><br>
 <br>
 <b>NTT Data Controller Pad - 27-buttons (including the 4 direction keys)</b><br>
 <table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td><pre>               _______________
@@ -5198,14 +5198,14 @@ a stationary bicycle, a monitor with TV tuner, a SNES game cartridge, and a
 SNES console with some extra hardware plugged into its Expansion Port.<br>
 <br>
 <b>Technical Info</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersexertainmentioports">SNES Controllers Exertainment - I/O Ports</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersexertainmentrs232controller">SNES Controllers Exertainment - RS232 Controller</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersexertainmentrs232datapacketsconfiguration">SNES Controllers Exertainment - RS232 Data Packets &amp; Configuration</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersexertainmentrs232datapacketsloginphase">SNES Controllers Exertainment - RS232 Data Packets Login Phase</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersexertainmentrs232datapacketsbikingphase">SNES Controllers Exertainment - RS232 Data Packets Biking Phase</a><br>
+<a href="#snescontrollersexertainmentioports">SNES Controllers Exertainment - I/O Ports</a><br>
+<a href="#snescontrollersexertainmentrs232controller">SNES Controllers Exertainment - RS232 Controller</a><br>
+<a href="#snescontrollersexertainmentrs232datapacketsconfiguration">SNES Controllers Exertainment - RS232 Data Packets &amp; Configuration</a><br>
+<a href="#snescontrollersexertainmentrs232datapacketsloginphase">SNES Controllers Exertainment - RS232 Data Packets Login Phase</a><br>
+<a href="#snescontrollersexertainmentrs232datapacketsbikingphase">SNES Controllers Exertainment - RS232 Data Packets Biking Phase</a><br>
 <br>
 <b>Drawings</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersexertainmentdrawings">SNES Controllers Exertainment - Drawings</a><br>
+<a href="#snescontrollersexertainmentdrawings">SNES Controllers Exertainment - Drawings</a><br>
 <br>
 <b>Supported Games</b><br>
 <table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td><pre>  Cannondale Cup (1993) CEG/American Softworks/RadicalEntertainment (US)
@@ -5287,10 +5287,10 @@ signal(?)<br>
 </pre></td></tr></tbody></table>
 <br>
 <b>21C0h..21C7h - TL16C550AN (U1) (RS232 Controller)</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersexertainmentrs232controller">SNES Controllers Exertainment - RS232 Controller</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersexertainmentrs232datapacketsconfiguration">SNES Controllers Exertainment - RS232 Data Packets &amp; Configuration</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersexertainmentrs232datapacketsloginphase">SNES Controllers Exertainment - RS232 Data Packets Login Phase</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersexertainmentrs232datapacketsbikingphase">SNES Controllers Exertainment - RS232 Data Packets Biking Phase</a><br>
+<a href="#snescontrollersexertainmentrs232controller">SNES Controllers Exertainment - RS232 Controller</a><br>
+<a href="#snescontrollersexertainmentrs232datapacketsconfiguration">SNES Controllers Exertainment - RS232 Data Packets &amp; Configuration</a><br>
+<a href="#snescontrollersexertainmentrs232datapacketsloginphase">SNES Controllers Exertainment - RS232 Data Packets Login Phase</a><br>
+<a href="#snescontrollersexertainmentrs232datapacketsbikingphase">SNES Controllers Exertainment - RS232 Data Packets Biking Phase</a><br>
 <br>
 <b>21C8h - 74HC374N (U3) - RAM address MSBs and SPI-style Serial Port (W)</b><br>
 <table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td><pre>  0   Serial Port Select (0=Select, 1=Idle)
@@ -5483,8 +5483,8 @@ RTS/CTS handshaking.<br>
 </pre></td></tr></tbody></table>
 <br>
 <b>Packet Details</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersexertainmentrs232datapacketsloginphase">SNES Controllers Exertainment - RS232 Data Packets Login Phase</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersexertainmentrs232datapacketsbikingphase">SNES Controllers Exertainment - RS232 Data Packets Biking Phase</a><br>
+<a href="#snescontrollersexertainmentrs232datapacketsloginphase">SNES Controllers Exertainment - RS232 Data Packets Login Phase</a><br>
+<a href="#snescontrollersexertainmentrs232datapacketsbikingphase">SNES Controllers Exertainment - RS232 Data Packets Biking Phase</a><br>
 <br>
 <b>RS232 Character Format</b><br>
 The character format is initialized as [21C3h]=3Bh, which means,<br>
@@ -5856,15 +5856,15 @@ games. The SNES related hardware versions are:<br>
 </pre></td></tr></tbody></table>
 <br>
 <b>TFII Mode (old NES mode, 4x8Kbyte)</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaddonturbofiletfiimodetransmissionprotocol">SNES Add-On Turbo File - TFII Mode Transmission Protocol</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaddonturbofiletfiimodefilesystem">SNES Add-On Turbo File - TFII Mode Filesystem</a><br>
+<a href="#snesaddonturbofiletfiimodetransmissionprotocol">SNES Add-On Turbo File - TFII Mode Transmission Protocol</a><br>
+<a href="#snesaddonturbofiletfiimodefilesystem">SNES Add-On Turbo File - TFII Mode Filesystem</a><br>
 <br>
 <b>STF Mode (native SNES mode, 128Kbyte)</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaddonturbofilestfmodetransmissionprotocol">SNES Add-On Turbo File - STF Mode Transmission Protocol</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaddonturbofilestfmodefilesystem">SNES Add-On Turbo File - STF Mode Filesystem</a><br>
+<a href="#snesaddonturbofilestfmodetransmissionprotocol">SNES Add-On Turbo File - STF Mode Transmission Protocol</a><br>
+<a href="#snesaddonturbofilestfmodefilesystem">SNES Add-On Turbo File - STF Mode Filesystem</a><br>
 <br>
 <b>Compatible Games</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaddonturbofilegames">SNES Add-On Turbo File - Games</a><br>
+<a href="#snesaddonturbofilegames">SNES Add-On Turbo File - Games</a><br>
 <br>
 <b>NES Turbofile (AS-TF02)</b><br>
 Original NES version, contains 8Kbytes battery backed RAM, and a 2-position
@@ -6237,8 +6237,8 @@ EXT port is probably bi-directional, but existing Famicom/Super Famicom games
 seem to be using it only for reading barcodes (without accessing the LCD
 screen, push buttons, speaker, or EEPROM).<br>
 <br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaddonbarcodetransmissionio">SNES Add-On Barcode Transmission I/O</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaddonbarcodebattlerdrawings">SNES Add-On Barcode Battler Drawings</a><br>
+<a href="#snesaddonbarcodetransmissionio">SNES Add-On Barcode Transmission I/O</a><br>
+<a href="#snesaddonbarcodebattlerdrawings">SNES Add-On Barcode Battler Drawings</a><br>
 <br>
 <b>Barcode Battler Famicom (NES) Games</b><br>
 <table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td><pre>  Barcode World (1992) Sunsoft (JP) (includes cable with 15pin connector)
@@ -6511,18 +6511,18 @@ mode(?)<br>
   <a name="snesaddonsfcmodemforjrapat"></a>&nbsp;
   SNES Add-On SFC Modem (for JRA PAT)
 </font></td></tr></tbody></table><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaddonsfcmodemdataio">SNES Add-On SFC Modem - Data I/O</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaddonsfcmodemmisc">SNES Add-On SFC Modem - Misc</a><br>
+<a href="#snesaddonsfcmodemdataio">SNES Add-On SFC Modem - Data I/O</a><br>
+<a href="#snesaddonsfcmodemmisc">SNES Add-On SFC Modem - Misc</a><br>
 <br>
 <b>Controller</b><br>
 The SFC Modem is bundled with a special controller (to be connected to
 controller port 1) (required for the JRA PAT software):<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersnttdatapadjoypadwithnumerickeypad">SNES Controllers NTT Data Pad (joypad with numeric keypad)</a><br>
+<a href="#snescontrollersnttdatapadjoypadwithnumerickeypad">SNES Controllers NTT Data Pad (joypad with numeric keypad)</a><br>
 <br>
 <b>FLASH Backup</b><br>
 The JRA PAT Modem BIOS cartridges contain FLASH backup memory (unlike other
 SNES cartridges which do use battery-backed SRAM instead of FLASH).<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartflashbackup">SNES Cart FLASH Backup</a><br>
+<a href="#snescartflashbackup">SNES Cart FLASH Backup</a><br>
 <br>
 <b>Baudrates</b><br>
 The BIOS seems to support max 2400 baud (old BIOS version) and 9600 baud (new
@@ -6531,7 +6531,7 @@ versions of the SFC Modem.<br>
 <br>
 <b>Note</b><br>
 There's also another modem (which connects to cartridge slot):<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartxband2400baudmodem">SNES Cart X-Band (2400 baud Modem)</a><br>
+<a href="#snescartxband2400baudmodem">SNES Cart X-Band (2400 baud Modem)</a><br>
 <br>
 <br>
 
@@ -6708,53 +6708,53 @@ how else it was intended to be used...?)<br>
   SNES Cartridges
 </font></td></tr></tbody></table><br>
 <b>General Cartridge Info</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartridgeromheader">SNES Cartridge ROM Header</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartridgepcbs">SNES Cartridge PCBs</a><br>
+<a href="#snescartridgeromheader">SNES Cartridge ROM Header</a><br>
+<a href="#snescartridgepcbs">SNES Cartridge PCBs</a><br>
 XXX SNES SRAM Mapping<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartridgeromimageheadersandfileextensions">SNES Cartridge ROM-Image Headers and File Extensions</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartridgeromimageinterleave">SNES Cartridge ROM-Image Interleave</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartridgeciclockoutchip">SNES Cartridge CIC Lockout Chip</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartridgeslotpinouts">SNES Cartridge Slot Pinouts</a><br>
+<a href="#snescartridgeromimageheadersandfileextensions">SNES Cartridge ROM-Image Headers and File Extensions</a><br>
+<a href="#snescartridgeromimageinterleave">SNES Cartridge ROM-Image Interleave</a><br>
+<a href="#snescartridgeciclockoutchip">SNES Cartridge CIC Lockout Chip</a><br>
+<a href="#snescartridgeslotpinouts">SNES Cartridge Slot Pinouts</a><br>
 <br>
 <b>Basic Mapping Schemes</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartlorommappingromdividedinto32kbanksaround1500games">SNES Cart LoROM Mapping (ROM divided into 32K banks) (around 1500 games)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescarthirommappingromdividedinto64kbanksaround500games">SNES Cart HiROM Mapping (ROM divided into 64K banks) (around 500 games)</a><br>
+<a href="#snescartlorommappingromdividedinto32kbanksaround1500games">SNES Cart LoROM Mapping (ROM divided into 32K banks) (around 1500 games)</a><br>
+<a href="#snescarthirommappingromdividedinto64kbanksaround500games">SNES Cart HiROM Mapping (ROM divided into 64K banks) (around 500 games)</a><br>
 <br>
 <b>Cartridges with External Programmable CPUs</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsa1programmable65c816cpuakasuperaccelerator35games">SNES Cart SA-1 (programmable 65C816 CPU) (aka Super Accelerator) (35 games)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartgsunprogrammablerisccpuakasuperfxmariochip10games">SNES Cart GSU-n (programmable RISC CPU) (aka Super FX/Mario Chip) (10 games)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcapcomcx4programmablerisccpumegamanx232games">SNES Cart Capcom CX4 (programmable RISC CPU) (Mega Man X 2-3) (2 games)</a><br>
+<a href="#snescartsa1programmable65c816cpuakasuperaccelerator35games">SNES Cart SA-1 (programmable 65C816 CPU) (aka Super Accelerator) (35 games)</a><br>
+<a href="#snescartgsunprogrammablerisccpuakasuperfxmariochip10games">SNES Cart GSU-n (programmable RISC CPU) (aka Super FX/Mario Chip) (10 games)</a><br>
+<a href="#snescartcapcomcx4programmablerisccpumegamanx232games">SNES Cart Capcom CX4 (programmable RISC CPU) (Mega Man X 2-3) (2 games)</a><br>
 <br>
 <b>Cartridges with External Pre-Programmed CPUs</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartdspnst010st011preprogrammednecupd77c25cpu23games">SNES Cart DSP-n/ST010/ST011 (pre-programmed NEC uPD77C25 CPU) (23 games)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsetast018preprogrammedarmcpu1game">SNES Cart Seta ST018 (pre-programmed ARM CPU) (1 game)</a><br>
+<a href="#snescartdspnst010st011preprogrammednecupd77c25cpu23games">SNES Cart DSP-n/ST010/ST011 (pre-programmed NEC uPD77C25 CPU) (23 games)</a><br>
+<a href="#snescartsetast018preprogrammedarmcpu1game">SNES Cart Seta ST018 (pre-programmed ARM CPU) (1 game)</a><br>
 <br>
 <b>Cartridges with other custom chips</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartobc1objcontroller1game">SNES Cart OBC1 (OBJ Controller) (1 game)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsdd1datadecompressor2games">SNES Cart S-DD1 (Data Decompressor) (2 games)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartspc7110datadecompressor3games">SNES Cart SPC7110 (Data Decompressor) (3 games)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartunlicensedvariants">SNES Cart Unlicensed Variants</a><br>
+<a href="#snescartobc1objcontroller1game">SNES Cart OBC1 (OBJ Controller) (1 game)</a><br>
+<a href="#snescartsdd1datadecompressor2games">SNES Cart S-DD1 (Data Decompressor) (2 games)</a><br>
+<a href="#snescartspc7110datadecompressor3games">SNES Cart SPC7110 (Data Decompressor) (3 games)</a><br>
+<a href="#snescartunlicensedvariants">SNES Cart Unlicensed Variants</a><br>
 <br>
 <b>Cartridges with Real-Time Clocks</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsrtcrealtimeclock1game">SNES Cart S-RTC (Realtime Clock) (1 game)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartspc7110withrtc4513realtimeclock1game">SNES Cart SPC7110 with RTC-4513 Real Time Clock (1 game)</a><br>
+<a href="#snescartsrtcrealtimeclock1game">SNES Cart S-RTC (Realtime Clock) (1 game)</a><br>
+<a href="#snescartspc7110withrtc4513realtimeclock1game">SNES Cart SPC7110 with RTC-4513 Real Time Clock (1 game)</a><br>
 Moreover, the Satellaview has a time function (allowing to receive the time via
 satellite dish). And, there are S-3520 (Seiko RTC's) in the Super Famicom Box
 and in the Nintendo Super System.<br>
 <br>
 <b>Special Non-game Cartridges/Expansions</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsupergameboy">SNES Cart Super Gameboy</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewsatellitereceiverminiflashcard">SNES Cart Satellaview (satellite receiver &amp; mini flashcard)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartdatapackslotssatellaviewlikeminicartridgeslot">SNES Cart Data Pack Slots (satellaview-like mini-cartridge slot)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartnintendopowerflashcard">SNES Cart Nintendo Power (flashcard)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsufamiturbominicartridgeadaptor">SNES Cart Sufami Turbo (Mini Cartridge Adaptor)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartxband2400baudmodem">SNES Cart X-Band (2400 baud Modem)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartflashbackup">SNES Cart FLASH Backup</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcheatdevices">SNES Cart Cheat Devices</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescarttristarakasuper8allowstoplaynesgamesonthesnes">SNES Cart Tri-Star (aka Super 8) (allows to play NES games on the SNES)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartpiratexin1multicarts1">SNES Cart Pirate X-in-1 Multicarts (1)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartpiratexin1multicarts2">SNES Cart Pirate X-in-1 Multicarts (2)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcopiers">SNES Cart Copiers</a><br>
+<a href="#snescartsupergameboy">SNES Cart Super Gameboy</a><br>
+<a href="#snescartsatellaviewsatellitereceiverminiflashcard">SNES Cart Satellaview (satellite receiver &amp; mini flashcard)</a><br>
+<a href="#snescartdatapackslotssatellaviewlikeminicartridgeslot">SNES Cart Data Pack Slots (satellaview-like mini-cartridge slot)</a><br>
+<a href="#snescartnintendopowerflashcard">SNES Cart Nintendo Power (flashcard)</a><br>
+<a href="#snescartsufamiturbominicartridgeadaptor">SNES Cart Sufami Turbo (Mini Cartridge Adaptor)</a><br>
+<a href="#snescartxband2400baudmodem">SNES Cart X-Band (2400 baud Modem)</a><br>
+<a href="#snescartflashbackup">SNES Cart FLASH Backup</a><br>
+<a href="#snescartcheatdevices">SNES Cart Cheat Devices</a><br>
+<a href="#snescarttristarakasuper8allowstoplaynesgamesonthesnes">SNES Cart Tri-Star (aka Super 8) (allows to play NES games on the SNES)</a><br>
+<a href="#snescartpiratexin1multicarts1">SNES Cart Pirate X-in-1 Multicarts (1)</a><br>
+<a href="#snescartpiratexin1multicarts2">SNES Cart Pirate X-in-1 Multicarts (2)</a><br>
+<a href="#snescartcopiers">SNES Cart Copiers</a><br>
 SNES Cart CDROM Drive (not released)<br>
 <br>
 <br>
@@ -6811,8 +6811,8 @@ using similar looking (but not fully identical) headers (and usually the same
 .SMC file extension) than normal ROM cartridges. Detecting the content of .SMC
 files can be done by examining ID Strings (Sufami Turbo), or differently
 calculated checksum values (Satellaview). For details, see:<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewsatellitereceiverminiflashcard">SNES Cart Satellaview (satellite receiver &amp; mini flashcard)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsufamiturbominicartridgeadaptor">SNES Cart Sufami Turbo (Mini Cartridge Adaptor)</a><br>
+<a href="#snescartsatellaviewsatellitereceiverminiflashcard">SNES Cart Satellaview (satellite receiver &amp; mini flashcard)</a><br>
+<a href="#snescartsufamiturbominicartridgeadaptor">SNES Cart Sufami Turbo (Mini Cartridge Adaptor)</a><br>
 Homebrew games (and copiers &amp; cheat devices) are usually having several
 errors in the cartridge header (usually no checksum, zero-padded title, etc),
 they should (hopefully) contain valid entryoints in range 8000h..FFFEh. Many
@@ -7321,14 +7321,14 @@ the data (or transmission timing) doesn't match the expected values, then the
 without CIC chip (or such with CICs for wrong regions).<br>
 <br>
 <b>CIC Details</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartridgecicpseudocode">SNES Cartridge CIC Pseudo Code</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartridgecicinstructionset">SNES Cartridge CIC Instruction Set</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartridgecicnotes">SNES Cartridge CIC Notes</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartridgecicversions">SNES Cartridge CIC Versions</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutscicchips">SNES Pinouts CIC Chips</a><br>
+<a href="#snescartridgecicpseudocode">SNES Cartridge CIC Pseudo Code</a><br>
+<a href="#snescartridgecicinstructionset">SNES Cartridge CIC Instruction Set</a><br>
+<a href="#snescartridgecicnotes">SNES Cartridge CIC Notes</a><br>
+<a href="#snescartridgecicversions">SNES Cartridge CIC Versions</a><br>
+<a href="#snespinoutscicchips">SNES Pinouts CIC Chips</a><br>
 <br>
 <b>CIC Disable</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescommonmods">SNES Common Mods</a><br>
+<a href="#snescommonmods">SNES Common Mods</a><br>
 <br>
 <br>
 
@@ -7904,19 +7904,19 @@ different ROM banks than 80h-FFh).<br>
   <a name="snescartsa1programmable65c816cpuakasuperaccelerator35games"></a>&nbsp;
   SNES Cart SA-1 (programmable 65C816 CPU) (aka Super Accelerator) (35 games)
 </font></td></tr></tbody></table><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsa1games">SNES Cart SA-1 Games</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsa1iomap">SNES Cart SA-1 I/O Map</a><br>
+<a href="#snescartsa1games">SNES Cart SA-1 Games</a><br>
+<a href="#snescartsa1iomap">SNES Cart SA-1 I/O Map</a><br>
 <br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsa1interruptcontrolonsnesside">SNES Cart SA-1 Interrupt/Control on SNES Side</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsa1interruptcontrolonsa1side">SNES Cart SA-1 Interrupt/Control on SA-1 Side</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsa1timer">SNES Cart SA-1 Timer</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsa1memorycontrol">SNES Cart SA-1 Memory Control</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsa1dmatransfers">SNES Cart SA-1 DMA Transfers</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsa1characterconversion">SNES Cart SA-1 Character Conversion</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsa1arithmeticmaths">SNES Cart SA-1 Arithmetic Maths</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsa1variablelengthbitprocessing">SNES Cart SA-1 Variable-Length Bit Processing</a><br>
+<a href="#snescartsa1interruptcontrolonsnesside">SNES Cart SA-1 Interrupt/Control on SNES Side</a><br>
+<a href="#snescartsa1interruptcontrolonsa1side">SNES Cart SA-1 Interrupt/Control on SA-1 Side</a><br>
+<a href="#snescartsa1timer">SNES Cart SA-1 Timer</a><br>
+<a href="#snescartsa1memorycontrol">SNES Cart SA-1 Memory Control</a><br>
+<a href="#snescartsa1dmatransfers">SNES Cart SA-1 DMA Transfers</a><br>
+<a href="#snescartsa1characterconversion">SNES Cart SA-1 Character Conversion</a><br>
+<a href="#snescartsa1arithmeticmaths">SNES Cart SA-1 Arithmetic Maths</a><br>
+<a href="#snescartsa1variablelengthbitprocessing">SNES Cart SA-1 Variable-Length Bit Processing</a><br>
 <br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutssa1chip">SNES Pinouts SA1 Chip</a><br>
+<a href="#snespinoutssa1chip">SNES Pinouts SA1 Chip</a><br>
 <br>
 <b>Memory Map (SNES Side)</b><br>
 <table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td><pre>  00h-3Fh/80h-BFh:2200h-23FFh  I/O Ports
@@ -8452,7 +8452,7 @@ unconventionally using SDA at 2x8xxxh and up (LoROM mapping).<br>
 <br>
 <b>Character Conversion DMA</b><br>
 Used to convert bitmaps or pixels to bit-planed tiles. For details, see<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsa1characterconversion">SNES Cart SA-1 Character Conversion</a><br>
+<a href="#snescartsa1characterconversion">SNES Cart SA-1 Character Conversion</a><br>
 <br>
 <b>SNES DMA (via Port 43xxh)</b><br>
 Can be used to transfer "normal" data from ROM/BW-RAM/I-RAM to SNES memory,
@@ -8628,28 +8628,28 @@ reading or 230Dh?<br>
 </font></td></tr></tbody></table><br>
 Graphic Support Unit (GSU) (10.74MHz RISC-like CPU)<br>
 <br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartgsunlistofgameschipsandpcbversions">SNES Cart GSU-n List of Games, Chips, and PCB versions</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartgsunmemorymap">SNES Cart GSU-n Memory Map</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartgsuniomap">SNES Cart GSU-n I/O Map</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartgsungeneralioports">SNES Cart GSU-n General I/O Ports</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartgsunbitmapioports">SNES Cart GSU-n Bitmap I/O Ports</a><br>
+<a href="#snescartgsunlistofgameschipsandpcbversions">SNES Cart GSU-n List of Games, Chips, and PCB versions</a><br>
+<a href="#snescartgsunmemorymap">SNES Cart GSU-n Memory Map</a><br>
+<a href="#snescartgsuniomap">SNES Cart GSU-n I/O Map</a><br>
+<a href="#snescartgsungeneralioports">SNES Cart GSU-n General I/O Ports</a><br>
+<a href="#snescartgsunbitmapioports">SNES Cart GSU-n Bitmap I/O Ports</a><br>
 <br>
 <b>GSU Opcodes</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartgsuncpumovopcodes">SNES Cart GSU-n CPU MOV Opcodes</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartgsuncpualuopcodes">SNES Cart GSU-n CPU ALU Opcodes</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartgsuncpujmpandprefixopcodes">SNES Cart GSU-n CPU JMP and Prefix Opcodes</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartgsuncpupseudoopcodes">SNES Cart GSU-n CPU Pseudo Opcodes</a><br>
+<a href="#snescartgsuncpumovopcodes">SNES Cart GSU-n CPU MOV Opcodes</a><br>
+<a href="#snescartgsuncpualuopcodes">SNES Cart GSU-n CPU ALU Opcodes</a><br>
+<a href="#snescartgsuncpujmpandprefixopcodes">SNES Cart GSU-n CPU JMP and Prefix Opcodes</a><br>
+<a href="#snescartgsuncpupseudoopcodes">SNES Cart GSU-n CPU Pseudo Opcodes</a><br>
 <br>
 <b>Misc</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartgsuncpumisc">SNES Cart GSU-n CPU Misc</a><br>
+<a href="#snescartgsuncpumisc">SNES Cart GSU-n CPU Misc</a><br>
 <br>
 <b>GSU Caches</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartgsuncodecache">SNES Cart GSU-n Code-Cache</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartgsunpixelcache">SNES Cart GSU-n Pixel-Cache</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartgsunothercaches">SNES Cart GSU-n Other Caches</a><br>
+<a href="#snescartgsuncodecache">SNES Cart GSU-n Code-Cache</a><br>
+<a href="#snescartgsunpixelcache">SNES Cart GSU-n Pixel-Cache</a><br>
+<a href="#snescartgsunothercaches">SNES Cart GSU-n Other Caches</a><br>
 <br>
 <b>Pinouts</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutsgsuchips">SNES Pinouts GSU Chips</a><br>
+<a href="#snespinoutsgsuchips">SNES Pinouts GSU Chips</a><br>
 <br>
 <br>
 
@@ -9524,10 +9524,10 @@ opcodes).<br>
   <a name="snescartcapcomcx4programmablerisccpumegamanx232games"></a>&nbsp;
   SNES Cart Capcom CX4 (programmable RISC CPU) (Mega Man X 2-3) (2 games)
 </font></td></tr></tbody></table><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcapcomcx4ioports">SNES Cart Capcom CX4 - I/O Ports</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcapcomcx4opcodes">SNES Cart Capcom CX4 - Opcodes</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcapcomcx4functions">SNES Cart Capcom CX4 - Functions</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutscx4chip">SNES Pinouts CX4 Chip</a><br>
+<a href="#snescartcapcomcx4ioports">SNES Cart Capcom CX4 - I/O Ports</a><br>
+<a href="#snescartcapcomcx4opcodes">SNES Cart Capcom CX4 - Opcodes</a><br>
+<a href="#snescartcapcomcx4functions">SNES Cart Capcom CX4 - Functions</a><br>
+<a href="#snespinoutscx4chip">SNES Pinouts CX4 Chip</a><br>
 <br>
 <b>Capcom CX4 - 80pin chip</b><br>
 Used only by two games:<br>
@@ -9880,13 +9880,13 @@ The onchip RAM is battery-backed and is accessible directly via SNES address
 bus.<br>
 <br>
 <b>NEC uPD77C25 Specs</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartdspnst010st011necupd77c25registersflagsoverview">SNES Cart DSP-n/ST010/ST011 - NEC uPD77C25 - Registers &amp; Flags &amp; Overview</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartdspnst010st011necupd77c25aluandldinstructions">SNES Cart DSP-n/ST010/ST011 - NEC uPD77C25 - ALU and LD Instructions</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartdspnst010st011necupd77c25jpinstructions">SNES Cart DSP-n/ST010/ST011 - NEC uPD77C25 - JP Instructions</a><br>
+<a href="#snescartdspnst010st011necupd77c25registersflagsoverview">SNES Cart DSP-n/ST010/ST011 - NEC uPD77C25 - Registers &amp; Flags &amp; Overview</a><br>
+<a href="#snescartdspnst010st011necupd77c25aluandldinstructions">SNES Cart DSP-n/ST010/ST011 - NEC uPD77C25 - ALU and LD Instructions</a><br>
+<a href="#snescartdspnst010st011necupd77c25jpinstructions">SNES Cart DSP-n/ST010/ST011 - NEC uPD77C25 - JP Instructions</a><br>
 <br>
 <b>Game specific info</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartdspnst010st011listofgamesusingthatchips">SNES Cart DSP-n/ST010/ST011 - List of Games using that chips</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartdspnst010st011biosfunctions">SNES Cart DSP-n/ST010/ST011 - BIOS Functions</a><br>
+<a href="#snescartdspnst010st011listofgamesusingthatchips">SNES Cart DSP-n/ST010/ST011 - List of Games using that chips</a><br>
+<a href="#snescartdspnst010st011biosfunctions">SNES Cart DSP-n/ST010/ST011 - BIOS Functions</a><br>
 <br>
 <b>DSPn/ST010/ST011 Cartridge Header</b><br>
 For DSPn Cartridges:<br>
@@ -10533,7 +10533,7 @@ The S-DD1 is a 100pin Data Decompression chip, used by only two games:<br>
 </pre></td></tr></tbody></table>
 <br>
 <b>S-DD1 Decompression Algorithm</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsdd1decompressionalgorithm">SNES Cart S-DD1 Decompression Algorithm</a><br>
+<a href="#snescartsdd1decompressionalgorithm">SNES Cart S-DD1 Decompression Algorithm</a><br>
 <br>
 <b>S-DD1 I/O Ports</b><br>
 <table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td><pre>  4800h  DMA Enable 1 (bit0..7 = DMA 0..7) (unchanged after DMA)
@@ -10688,16 +10688,16 @@ Decompression chip from Epson/Seiko, used only by three games from Hudson soft:<
 <br>
 XXX add info from byuu's "spc7110-mcu.txt" file.<br>
 <br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartspc7110memoryandiomap">SNES Cart SPC7110 Memory and I/O Map</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartspc7110decompressionioports">SNES Cart SPC7110 Decompression I/O Ports</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartspc7110directdataromaccess">SNES Cart SPC7110 Direct Data ROM Access</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartspc7110multiplydivideunit">SNES Cart SPC7110 Multiply/Divide Unit</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartspc7110withrtc4513realtimeclock1game">SNES Cart SPC7110 with RTC-4513 Real Time Clock (1 game)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartspc7110decompressionalgorithm">SNES Cart SPC7110 Decompression Algorithm</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartspc7110notes">SNES Cart SPC7110 Notes</a><br>
+<a href="#snescartspc7110memoryandiomap">SNES Cart SPC7110 Memory and I/O Map</a><br>
+<a href="#snescartspc7110decompressionioports">SNES Cart SPC7110 Decompression I/O Ports</a><br>
+<a href="#snescartspc7110directdataromaccess">SNES Cart SPC7110 Direct Data ROM Access</a><br>
+<a href="#snescartspc7110multiplydivideunit">SNES Cart SPC7110 Multiply/Divide Unit</a><br>
+<a href="#snescartspc7110withrtc4513realtimeclock1game">SNES Cart SPC7110 with RTC-4513 Real Time Clock (1 game)</a><br>
+<a href="#snescartspc7110decompressionalgorithm">SNES Cart SPC7110 Decompression Algorithm</a><br>
+<a href="#snescartspc7110notes">SNES Cart SPC7110 Notes</a><br>
 <br>
 <b>Pinouts</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutsdecompressionchips">SNES Pinouts Decompression Chips</a><br>
+<a href="#snespinoutsdecompressionchips">SNES Pinouts Decompression Chips</a><br>
 <br>
 <br>
 
@@ -11043,7 +11043,7 @@ Serial data is transferred LSB first.<br>
 On-chip 32.768kHz quartz crystal.<br>
 <br>
 <b>Pin-Outs</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutsrtcchips">SNES Pinouts RTC Chips</a><br>
+<a href="#snespinoutsrtcchips">SNES Pinouts RTC Chips</a><br>
 <br>
 <br>
 
@@ -11355,7 +11355,7 @@ writing, too):<br>
 </pre></td></tr></tbody></table>
 <br>
 <b>Pinouts</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutsrtcchips">SNES Pinouts RTC Chips</a><br>
+<a href="#snespinoutsrtcchips">SNES Pinouts RTC Chips</a><br>
 <br>
 <b>Note</b><br>
 There's another game that uses a different RTC chip: A 4bit serial bus RTC-4513
@@ -11555,35 +11555,35 @@ Un/Mute Sound --&gt; During Gameplay, press R, L, L, R, R, L quite fast.<br>
   SNES Cart Satellaview (satellite receiver &amp; mini flashcard)
 </font></td></tr></tbody></table><br>
 <b>Satellaview I/O Ports</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewiomap">SNES Cart Satellaview I/O Map</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewioportsofmccmemorycontroller">SNES Cart Satellaview I/O Ports of MCC Memory Controller</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewioreceiverdatastreams">SNES Cart Satellaview I/O Receiver Data Streams</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewioreceiverdatastreamsnotes">SNES Cart Satellaview I/O Receiver Data Streams (Notes)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewioreceivercontrol">SNES Cart Satellaview I/O Receiver Control</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewioflashdetectiontype1234">SNES Cart Satellaview I/O FLASH Detection (Type 1,2,3,4)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewioflashaccesstype134">SNES Cart Satellaview I/O FLASH Access (Type 1,3,4)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewioflashaccesstype2">SNES Cart Satellaview I/O FLASH Access (Type 2)</a><br>
+<a href="#snescartsatellaviewiomap">SNES Cart Satellaview I/O Map</a><br>
+<a href="#snescartsatellaviewioportsofmccmemorycontroller">SNES Cart Satellaview I/O Ports of MCC Memory Controller</a><br>
+<a href="#snescartsatellaviewioreceiverdatastreams">SNES Cart Satellaview I/O Receiver Data Streams</a><br>
+<a href="#snescartsatellaviewioreceiverdatastreamsnotes">SNES Cart Satellaview I/O Receiver Data Streams (Notes)</a><br>
+<a href="#snescartsatellaviewioreceivercontrol">SNES Cart Satellaview I/O Receiver Control</a><br>
+<a href="#snescartsatellaviewioflashdetectiontype1234">SNES Cart Satellaview I/O FLASH Detection (Type 1,2,3,4)</a><br>
+<a href="#snescartsatellaviewioflashaccesstype134">SNES Cart Satellaview I/O FLASH Access (Type 1,3,4)</a><br>
+<a href="#snescartsatellaviewioflashaccesstype2">SNES Cart Satellaview I/O FLASH Access (Type 2)</a><br>
 <br>
 <b>Satellaview Transmission Format</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewpacketheadersandframes">SNES Cart Satellaview Packet Headers and Frames</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewchannelsandchannelmap">SNES Cart Satellaview Channels and Channel Map</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewtownstatuspacket">SNES Cart Satellaview Town Status Packet</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewdirectorypacket">SNES Cart Satellaview Directory Packet</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewexpansiondataatendofdirectorypackets">SNES Cart Satellaview Expansion Data (at end of Directory Packets)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewotherpackets">SNES Cart Satellaview Other Packets</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewbuildings">SNES Cart Satellaview Buildings</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewpeople">SNES Cart Satellaview People</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewitems">SNES Cart Satellaview Items</a><br>
+<a href="#snescartsatellaviewpacketheadersandframes">SNES Cart Satellaview Packet Headers and Frames</a><br>
+<a href="#snescartsatellaviewchannelsandchannelmap">SNES Cart Satellaview Channels and Channel Map</a><br>
+<a href="#snescartsatellaviewtownstatuspacket">SNES Cart Satellaview Town Status Packet</a><br>
+<a href="#snescartsatellaviewdirectorypacket">SNES Cart Satellaview Directory Packet</a><br>
+<a href="#snescartsatellaviewexpansiondataatendofdirectorypackets">SNES Cart Satellaview Expansion Data (at end of Directory Packets)</a><br>
+<a href="#snescartsatellaviewotherpackets">SNES Cart Satellaview Other Packets</a><br>
+<a href="#snescartsatellaviewbuildings">SNES Cart Satellaview Buildings</a><br>
+<a href="#snescartsatellaviewpeople">SNES Cart Satellaview People</a><br>
+<a href="#snescartsatellaviewitems">SNES Cart Satellaview Items</a><br>
 <br>
 <b>Satellaview Memory</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewsrambatterybacked">SNES Cart Satellaview SRAM (Battery-backed)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewflashfileheader">SNES Cart Satellaview FLASH File Header</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewbiosfunctionsummary">SNES Cart Satellaview BIOS Function Summary</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewinterpretertokensummary">SNES Cart Satellaview Interpreter Token Summary</a><br>
+<a href="#snescartsatellaviewsrambatterybacked">SNES Cart Satellaview SRAM (Battery-backed)</a><br>
+<a href="#snescartsatellaviewflashfileheader">SNES Cart Satellaview FLASH File Header</a><br>
+<a href="#snescartsatellaviewbiosfunctionsummary">SNES Cart Satellaview BIOS Function Summary</a><br>
+<a href="#snescartsatellaviewinterpretertokensummary">SNES Cart Satellaview Interpreter Token Summary</a><br>
 <br>
 <b>Other Satellaview Info</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewchipsets">SNES Cart Satellaview Chipsets</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutsbsxconnectors">SNES Pinouts BSX Connectors</a><br>
+<a href="#snescartsatellaviewchipsets">SNES Cart Satellaview Chipsets</a><br>
+<a href="#snespinoutsbsxconnectors">SNES Pinouts BSX Connectors</a><br>
 <br>
 <br>
 
@@ -11764,7 +11764,7 @@ cleared after reading 218Dh/2193h.<br>
 Bit 2-3 are more or less self-explaining: Don't use the queued data, and
 discard any already (but still incompletely) received packet fragments. Bit 4,7
 are a bit more complicated. See Notes in next chapter for details.<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewioreceiverdatastreamsnotes">SNES Cart Satellaview I/O Receiver Data Streams (Notes)</a><br>
+<a href="#snescartsatellaviewioreceiverdatastreamsnotes">SNES Cart Satellaview I/O Receiver Data Streams (Notes)</a><br>
 <br>
 <br>
 
@@ -12003,7 +12003,7 @@ with on-chip I/O ports, including memory-mapping facilities), the SA-1 doesn't
 seem to have FLASH-specific mapping registers, so the FLASH might be mapped as
 secondary ROM-chip. There may be also other games without SA-1, using different
 FLASH mapping mechanism(s)? For some details, see:<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartdatapackslotssatellaviewlikeminicartridgeslot">SNES Cart Data Pack Slots (satellaview-like mini-cartridge slot)</a><br>
+<a href="#snescartdatapackslotssatellaviewlikeminicartridgeslot">SNES Cart Data Pack Slots (satellaview-like mini-cartridge slot)</a><br>
 <br>
 <b>General Notes</b><br>
 FLASH erase sets all bytes to FFh. FLASH writes can only change bits from 1 to
@@ -12789,7 +12789,7 @@ values are apparently bugged).<br>
 The file must contain a Satellaview Transmit Header (at file offset 7Fxxh or
 FFxxh), that header is similar to the FLASH File Header. For details &amp;
 differences, see:<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewflashfileheader">SNES Cart Satellaview FLASH File Header</a><br>
+<a href="#snescartsatellaviewflashfileheader">SNES Cart Satellaview FLASH File Header</a><br>
 The filesize should be usually a multiple of 128Kbytes (because the checksum in
 File Header is computed accross that size). Transmitting smaller files is
 possible with some trickery: For FLASH download, assume FLASH to be erased (ie.
@@ -13813,7 +13813,7 @@ Note: Some of the above functions are also listed in the table at 808000h.<br>
 <br>
 <b>Compressed Data</b><br>
 Some of the Functions can (optionally) use compressed Tile/Map/Palette data.<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesdecompressionformats">SNES Decompression Formats</a><br>
+<a href="#snesdecompressionformats">SNES Decompression Formats</a><br>
 Note: The actual compressed data is usually preceeded-by or bundled-with
 compression flags, length entry, and/or (in-)direct src/dest pointers (that
 "header" varies from function to function).<br>
@@ -13974,8 +13974,8 @@ The SRAM is divided into sixteen 2Kbyte blocks for storing game positions.
 Games can use one or more (or all) of these blocks (the menu doesn't use any of
 that memory).<br>
 <br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartnintendopowerioports">SNES Cart Nintendo Power - I/O Ports</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartnintendopowerdirectory">SNES Cart Nintendo Power - Directory</a><br>
+<a href="#snescartnintendopowerioports">SNES Cart Nintendo Power - I/O Ports</a><br>
+<a href="#snescartnintendopowerdirectory">SNES Cart Nintendo Power - Directory</a><br>
 <br>
 <b>Nintendo Power Games</b><br>
 Games have been available at kiosks with FLASH Programming Stations. There are
@@ -14214,9 +14214,9 @@ from cost-reduction, one special feature is that one can connect two cartridges
 at ones (so two games could share ROM or SRAM data). The BIOS in the adaptor
 provides a huge character set, which may allow to reduce ROM size of the games.<br>
 <br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsufamiturbogeneralnotes">SNES Cart Sufami Turbo General Notes</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsufamiturboromramheaders">SNES Cart Sufami Turbo ROM/RAM Headers</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsufamiturbobiosfunctionscharset">SNES Cart Sufami Turbo BIOS Functions &amp; Charset</a><br>
+<a href="#snescartsufamiturbogeneralnotes">SNES Cart Sufami Turbo General Notes</a><br>
+<a href="#snescartsufamiturboromramheaders">SNES Cart Sufami Turbo ROM/RAM Headers</a><br>
+<a href="#snescartsufamiturbobiosfunctionscharset">SNES Cart Sufami Turbo BIOS Functions &amp; Charset</a><br>
 <br>
 <br>
 
@@ -14448,15 +14448,15 @@ The X-Band is a 2400 baud modem from Catapult Entertainment Inc., licensed by
 Nintendo, originally released 1994 in USA, and 199x? in Japan. Aside from the
 SNES version, there have been also Genesis and Saturn versions.<br>
 <br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartxbandmisc">SNES Cart X-Band Misc</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartxbandsmartcardreader">SNES Cart X-Band Smart Card Reader</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartxbandrockwellports">SNES Cart X-Band Rockwell Ports</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartxbandrockwellnotes">SNES Cart X-Band Rockwell Notes</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersxbandkeyboard">SNES Controllers X-Band Keyboard</a><br>
+<a href="#snescartxbandmisc">SNES Cart X-Band Misc</a><br>
+<a href="#snescartxbandsmartcardreader">SNES Cart X-Band Smart Card Reader</a><br>
+<a href="#snescartxbandrockwellports">SNES Cart X-Band Rockwell Ports</a><br>
+<a href="#snescartxbandrockwellnotes">SNES Cart X-Band Rockwell Notes</a><br>
+<a href="#snescontrollersxbandkeyboard">SNES Controllers X-Band Keyboard</a><br>
 <br>
 <b>Note</b><br>
 There's also another modem (which connects to controller port):<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaddonsfcmodemforjrapat">SNES Add-On SFC Modem (for JRA PAT)</a><br>
+<a href="#snesaddonsfcmodemforjrapat">SNES Add-On SFC Modem (for JRA PAT)</a><br>
 <br>
 <br>
 
@@ -15032,7 +15032,7 @@ Notes:<br>
 Most SNES games are using battery-backed SRAM for storing data, the only
 exception - which do use FLASH memory - are the JRA PAT BIOS cartridges for the
 SFC Modem:<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaddonsfcmodemforjrapat">SNES Add-On SFC Modem (for JRA PAT)</a><br>
+<a href="#snesaddonsfcmodemforjrapat">SNES Add-On SFC Modem (for JRA PAT)</a><br>
 There are two JRA PAT versions, the older one (1997) supports only AMD FLASH,
 the newer one (1999) supports AMD/Atmel/Sharp FLASH chips.<br>
 <table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td><pre>  ID=2001h - AM29F010 AMD (128Kbyte)      ;supported by BOTH bios versions
@@ -15168,7 +15168,7 @@ PCB VERSIONS<br>
 <br>
 <b>See Also</b><br>
 Another approach for using FLASH backup is used in carts with Data Pack slots:<br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartdatapackslotssatellaviewlikeminicartridgeslot">SNES Cart Data Pack Slots (satellaview-like mini-cartridge slot)</a><br>
+<a href="#snescartdatapackslotssatellaviewlikeminicartridgeslot">SNES Cart Data Pack Slots (satellaview-like mini-cartridge slot)</a><br>
 <br>
 <br>
 
@@ -15187,15 +15187,15 @@ Another approach for using FLASH backup is used in carts with Data Pack slots:<b
 </pre></td></tr></tbody></table>
 <br>
 <b>Code Format Details</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcheatdevicescodeformats">SNES Cart Cheat Devices - Code Formats</a><br>
+<a href="#snescartcheatdevicescodeformats">SNES Cart Cheat Devices - Code Formats</a><br>
 <br>
 <b>Hardware Details</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcheatdevicesgamegenie">SNES Cart Cheat Devices - Game Genie</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcheatdevicesproactionreplayioports">SNES Cart Cheat Devices - Pro Action Replay I/O Ports</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcheatdevicesproactionreplaymemory">SNES Cart Cheat Devices - Pro Action Replay Memory</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcheatdevicesxterminatorgamewizard">SNES Cart Cheat Devices - X-Terminator &amp; Game Wizard</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcheatdevicesgamesaver">SNES Cart Cheat Devices - Game Saver</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcheatdevicestheory">SNES Cart Cheat Devices - Theory</a><br>
+<a href="#snescartcheatdevicesgamegenie">SNES Cart Cheat Devices - Game Genie</a><br>
+<a href="#snescartcheatdevicesproactionreplayioports">SNES Cart Cheat Devices - Pro Action Replay I/O Ports</a><br>
+<a href="#snescartcheatdevicesproactionreplaymemory">SNES Cart Cheat Devices - Pro Action Replay Memory</a><br>
+<a href="#snescartcheatdevicesxterminatorgamewizard">SNES Cart Cheat Devices - X-Terminator &amp; Game Wizard</a><br>
+<a href="#snescartcheatdevicesgamesaver">SNES Cart Cheat Devices - Game Saver</a><br>
+<a href="#snescartcheatdevicestheory">SNES Cart Cheat Devices - Theory</a><br>
 <br>
 <b>Cheat Devices &amp; Number of Hardware/Software patches &amp; Built-in codes</b><br>
 <table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td><pre>  Name                            Hardware/ROM  Software/WRAM  Built-in
@@ -16043,28 +16043,28 @@ SRAM might also exist (the photo shows some unidentified 24pin chip).<br>
   SNES Cart Copiers
 </font></td></tr></tbody></table><br>
 <b>Copiers</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcopiersfrontfareastsupermagicomsuperwildcard">SNES Cart Copiers - Front Fareast (Super Magicom &amp; Super Wild Card)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcopierscclsupercomprofighter">SNES Cart Copiers - CCL (Supercom &amp; Pro Fighter)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcopiersbunggamedoctor">SNES Cart Copiers - Bung (Game Doctor)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcopierssuperufo">SNES Cart Copiers - Super UFO</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcopierssanetingsuperdiskinterceptor">SNES Cart Copiers - Sane Ting (Super Disk Interceptor)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcopiersgamarscopier">SNES Cart Copiers - Gamars Copier</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcopiersvenusmultigamehunter">SNES Cart Copiers - Venus (Multi Game Hunter)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcopiersothers">SNES Cart Copiers - Others</a><br>
+<a href="#snescartcopiersfrontfareastsupermagicomsuperwildcard">SNES Cart Copiers - Front Fareast (Super Magicom &amp; Super Wild Card)</a><br>
+<a href="#snescartcopierscclsupercomprofighter">SNES Cart Copiers - CCL (Supercom &amp; Pro Fighter)</a><br>
+<a href="#snescartcopiersbunggamedoctor">SNES Cart Copiers - Bung (Game Doctor)</a><br>
+<a href="#snescartcopierssuperufo">SNES Cart Copiers - Super UFO</a><br>
+<a href="#snescartcopierssanetingsuperdiskinterceptor">SNES Cart Copiers - Sane Ting (Super Disk Interceptor)</a><br>
+<a href="#snescartcopiersgamarscopier">SNES Cart Copiers - Gamars Copier</a><br>
+<a href="#snescartcopiersvenusmultigamehunter">SNES Cart Copiers - Venus (Multi Game Hunter)</a><br>
+<a href="#snescartcopiersothers">SNES Cart Copiers - Others</a><br>
 <br>
 <b>Misc</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcopiersmisc">SNES Cart Copiers - Misc</a><br>
+<a href="#snescartcopiersmisc">SNES Cart Copiers - Misc</a><br>
 <br>
 <b>Floppy Disc Controllers</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcopiersfloppydisccontrollers">SNES Cart Copiers - Floppy Disc Controllers</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcopiersfloppydiscnecupd765commands">SNES Cart Copiers - Floppy Disc NEC uPD765 Commands</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcopiersfloppydiscfat12format">SNES Cart Copiers - Floppy Disc FAT12 Format</a><br>
+<a href="#snescartcopiersfloppydisccontrollers">SNES Cart Copiers - Floppy Disc Controllers</a><br>
+<a href="#snescartcopiersfloppydiscnecupd765commands">SNES Cart Copiers - Floppy Disc NEC uPD765 Commands</a><br>
+<a href="#snescartcopiersfloppydiscfat12format">SNES Cart Copiers - Floppy Disc FAT12 Format</a><br>
 <br>
 <b>BIOSes</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcopiersbioses">SNES Cart Copiers - BIOSes</a><br>
+<a href="#snescartcopiersbioses">SNES Cart Copiers - BIOSes</a><br>
 <br>
 <b>See also</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartridgeromimageheadersandfileextensions">SNES Cartridge ROM-Image Headers and File Extensions</a><br>
+<a href="#snescartridgeromimageheadersandfileextensions">SNES Cartridge ROM-Image Headers and File Extensions</a><br>
 <br>
 <br>
 
@@ -17011,7 +17011,7 @@ GM82C765B ports can be arranged differently (in case of the Super Wild Card,
 Front Fareast kept them arranged the same way as on their older Super Magicom).<br>
 <br>
 <b>FDC Command/Data and Main Status</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcopiersfloppydiscnecupd765commands">SNES Cart Copiers - Floppy Disc NEC uPD765 Commands</a><br>
+<a href="#snescartcopiersfloppydiscnecupd765commands">SNES Cart Copiers - Floppy Disc NEC uPD765 Commands</a><br>
 <br>
 <b>FDC Motor Control</b><br>
 <table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td><pre>  GM Bit0-7:  DSEL ,X    ,/RES,DMAEN,MOTOR1,MOTOR2,X     ,MSEL
@@ -17343,43 +17343,43 @@ Unknown if any copiers support compressed files (ZIP or such).<br>
 </font></td></tr></tbody></table><br>
 <b>Nintendo Super System (NSS) (USA) (1991)</b><br>
 Arcade Cabinet. Contains up to three special cartridges (with one game each).<br>
-<a href="http://problemkaputt.de/fullsnes.htm#nssmemoryandiomaps">NSS Memory and I/O Maps</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#nssioportscontrolregisters">NSS I/O Ports - Control Registers</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#nssioportsbuttoninputsandcoincontrol">NSS I/O Ports - Button Inputs and Coin Control</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#nssioportsrtcandosd">NSS I/O Ports - RTC and OSD</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#nssioportseepromandprom">NSS I/O Ports - EEPROM and PROM</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#nssbiosandinstrommaps">NSS BIOS and INST ROM Maps</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#nssinterpretertokens">NSS Interpreter Tokens</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#nsscontrols">NSS Controls</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#nssgamesbiosesandromimages">NSS Games, BIOSes and ROM-Images</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#nsscomponentlists">NSS Component Lists</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#nsspinouts">NSS Pin-Outs</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#nssonscreencontrollerosd">NSS On-Screen Controller (OSD)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#z80cpuspecifications">Z80 CPU Specifications</a><br>
+<a href="#nssmemoryandiomaps">NSS Memory and I/O Maps</a><br>
+<a href="#nssioportscontrolregisters">NSS I/O Ports - Control Registers</a><br>
+<a href="#nssioportsbuttoninputsandcoincontrol">NSS I/O Ports - Button Inputs and Coin Control</a><br>
+<a href="#nssioportsrtcandosd">NSS I/O Ports - RTC and OSD</a><br>
+<a href="#nssioportseepromandprom">NSS I/O Ports - EEPROM and PROM</a><br>
+<a href="#nssbiosandinstrommaps">NSS BIOS and INST ROM Maps</a><br>
+<a href="#nssinterpretertokens">NSS Interpreter Tokens</a><br>
+<a href="#nsscontrols">NSS Controls</a><br>
+<a href="#nssgamesbiosesandromimages">NSS Games, BIOSes and ROM-Images</a><br>
+<a href="#nsscomponentlists">NSS Component Lists</a><br>
+<a href="#nsspinouts">NSS Pin-Outs</a><br>
+<a href="#nssonscreencontrollerosd">NSS On-Screen Controller (OSD)</a><br>
+<a href="#z80cpuspecifications">Z80 CPU Specifications</a><br>
 <br>
 <b>Super Famicom Box (Japan/Nintendo/HAL) (1993)</b><br>
 For use in hotel rooms. Typically contains two special multi-carts (which,
 together, contain a menu-program and 5 games).<br>
-<a href="http://problemkaputt.de/fullsnes.htm#sfcboxoverview">SFC-Box Overview</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#sfcboxcoprocessorhd64180extendedz80">SFC-Box Coprocessor (HD64180) (extended Z80)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#sfcboxmemoryiomaps">SFC-Box Memory &amp; I/O Maps</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#sfcboxioportscustomports">SFC-Box I/O Ports (Custom Ports)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#sfcboxioportshd64180ports">SFC-Box I/O Ports (HD64180 Ports)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#sfcboxgromformat">SFC-Box GROM Format</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#sfcboxosdchiponscreendisplaycontroller">SFC-Box OSD Chip (On-Screen Display Controller)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#sfcboxcomponentlistcartridges">SFC-Box Component List (Cartridges)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#sfcboxcomponentlistconsole">SFC-Box Component List (Console)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#rtcs3520realtimeclock">RTC S-3520 (Real-Time Clock)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#z80cpuspecifications">Z80 CPU Specifications</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#hd64180">HD64180</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#hd64180internaliomap">HD64180 Internal I/O Map</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#hd64180newopcodesz80extension">HD64180 New Opcodes (Z80 Extension)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#hd64180serialioportsasciandcsio">HD64180 Serial I/O Ports (ASCI and CSI/O)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#hd64180timersprtandfrc">HD64180 Timers (PRT and FRC)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#hd64180directmemoryaccessdma">HD64180 Direct Memory Access (DMA)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#hd64180interrupts">HD64180 Interrupts</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#hd64180memorymappingandcontrol">HD64180 Memory Mapping and Control</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#hd64180extensions">HD64180 Extensions</a><br>
+<a href="#sfcboxoverview">SFC-Box Overview</a><br>
+<a href="#sfcboxcoprocessorhd64180extendedz80">SFC-Box Coprocessor (HD64180) (extended Z80)</a><br>
+<a href="#sfcboxmemoryiomaps">SFC-Box Memory &amp; I/O Maps</a><br>
+<a href="#sfcboxioportscustomports">SFC-Box I/O Ports (Custom Ports)</a><br>
+<a href="#sfcboxioportshd64180ports">SFC-Box I/O Ports (HD64180 Ports)</a><br>
+<a href="#sfcboxgromformat">SFC-Box GROM Format</a><br>
+<a href="#sfcboxosdchiponscreendisplaycontroller">SFC-Box OSD Chip (On-Screen Display Controller)</a><br>
+<a href="#sfcboxcomponentlistcartridges">SFC-Box Component List (Cartridges)</a><br>
+<a href="#sfcboxcomponentlistconsole">SFC-Box Component List (Console)</a><br>
+<a href="#rtcs3520realtimeclock">RTC S-3520 (Real-Time Clock)</a><br>
+<a href="#z80cpuspecifications">Z80 CPU Specifications</a><br>
+<a href="#hd64180">HD64180</a><br>
+<a href="#hd64180internaliomap">HD64180 Internal I/O Map</a><br>
+<a href="#hd64180newopcodesz80extension">HD64180 New Opcodes (Z80 Extension)</a><br>
+<a href="#hd64180serialioportsasciandcsio">HD64180 Serial I/O Ports (ASCI and CSI/O)</a><br>
+<a href="#hd64180timersprtandfrc">HD64180 Timers (PRT and FRC)</a><br>
+<a href="#hd64180directmemoryaccessdma">HD64180 Direct Memory Access (DMA)</a><br>
+<a href="#hd64180interrupts">HD64180 Interrupts</a><br>
+<a href="#hd64180memorymappingandcontrol">HD64180 Memory Mapping and Control</a><br>
+<a href="#hd64180extensions">HD64180 Extensions</a><br>
 <br>
 <b>DS-109S (Third-Party/Japan?) (Osaka Tu...?)</b><br>
 For hotels or so. Contains 10 regular SNES/SFC cartridges. Game selection is
@@ -17600,10 +17600,10 @@ lines are OSD CLK and OSD Chip Select.<br>
 The NSS-BIOS supports year 1900..2099 (century 00h=19xx, FFh=20xx is stored in
 RAM at 8F8Dh/978Dh/9F8Dh; in the two version "03" BIOSes). The current time is
 shown when pressing Restart in the Bookkeeping screen.<br>
-<a href="http://problemkaputt.de/fullsnes.htm#rtcs3520realtimeclock">RTC S-3520 (Real-Time Clock)</a><br>
+<a href="#rtcs3520realtimeclock">RTC S-3520 (Real-Time Clock)</a><br>
 <br>
 <b>OSD On-Screen Display (M50458-001SP)</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#nssonscreencontrollerosd">NSS On-Screen Controller (OSD)</a><br>
+<a href="#nssonscreencontrollerosd">NSS On-Screen Controller (OSD)</a><br>
 <br>
 <br>
 
@@ -19276,7 +19276,7 @@ Unused-Joypad-Data (at P6):   ;&lt;-- if none: four 00h-bytes<br>
 </pre></td></tr></tbody></table>
 <br>
 <b>Title Bitmap Compression</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesdecompressionformats">SNES Decompression Formats</a><br>
+<a href="#snesdecompressionformats">SNES Decompression Formats</a><br>
 <br>
 <br>
 
@@ -19547,7 +19547,7 @@ desired, one can read two or more registers by reading/writing 6 or more
 nibbles (the NSS BIOS does so).<br>
 <br>
 <b>Pin-Outs</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutsrtcchips">SNES Pinouts RTC Chips</a><br>
+<a href="#snespinoutsrtcchips">SNES Pinouts RTC Chips</a><br>
 <br>
 <br>
 
@@ -19556,20 +19556,20 @@ nibbles (the NSS BIOS does so).<br>
   <a name="z80cpuspecifications"></a>&nbsp;
   Z80 CPU Specifications
 </font></td></tr></tbody></table><br>
-<a href="http://problemkaputt.de/fullsnes.htm#z80registerset">Z80 Register Set</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#z80flags">Z80 Flags</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#z80instructionformat">Z80 Instruction Format</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#z80loadcommands">Z80 Load Commands</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#z80arithmeticlogicalcommands">Z80 Arithmetic/Logical Commands</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#z80rotateshiftandsinglebitoperations">Z80 Rotate/Shift and Singlebit Operations</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#z80jumpcommandsinterrupts">Z80 Jumpcommands &amp; Interrupts</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#z80iocommands">Z80 I/O Commands</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#z80interrupts">Z80 Interrupts</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#z80meaninglessandduplicatedopcodes">Z80 Meaningless and Duplicated Opcodes</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#z80garbageinflagregister">Z80 Garbage in Flag Register</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#z80compatibility">Z80 Compatibility</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#z80pinouts">Z80 Pin-Outs</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#z80localusage">Z80 Local Usage</a><br>
+<a href="#z80registerset">Z80 Register Set</a><br>
+<a href="#z80flags">Z80 Flags</a><br>
+<a href="#z80instructionformat">Z80 Instruction Format</a><br>
+<a href="#z80loadcommands">Z80 Load Commands</a><br>
+<a href="#z80arithmeticlogicalcommands">Z80 Arithmetic/Logical Commands</a><br>
+<a href="#z80rotateshiftandsinglebitoperations">Z80 Rotate/Shift and Singlebit Operations</a><br>
+<a href="#z80jumpcommandsinterrupts">Z80 Jumpcommands &amp; Interrupts</a><br>
+<a href="#z80iocommands">Z80 I/O Commands</a><br>
+<a href="#z80interrupts">Z80 Interrupts</a><br>
+<a href="#z80meaninglessandduplicatedopcodes">Z80 Meaningless and Duplicated Opcodes</a><br>
+<a href="#z80garbageinflagregister">Z80 Garbage in Flag Register</a><br>
+<a href="#z80compatibility">Z80 Compatibility</a><br>
+<a href="#z80pinouts">Z80 Pin-Outs</a><br>
+<a href="#z80localusage">Z80 Local Usage</a><br>
 <br>
 <br>
 
@@ -20365,14 +20365,14 @@ PHI=4.608MHz.<br>
 The HD64180/Z180 are extended Z80 CPUs, the HD64180 was originally made by
 Hitachi, and later adopted as Z180 by Zilog.<br>
 <br>
-<a href="http://problemkaputt.de/fullsnes.htm#hd64180internaliomap">HD64180 Internal I/O Map</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#hd64180newopcodesz80extension">HD64180 New Opcodes (Z80 Extension)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#hd64180serialioportsasciandcsio">HD64180 Serial I/O Ports (ASCI and CSI/O)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#hd64180timersprtandfrc">HD64180 Timers (PRT and FRC)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#hd64180directmemoryaccessdma">HD64180 Direct Memory Access (DMA)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#hd64180interrupts">HD64180 Interrupts</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#hd64180memorymappingandcontrol">HD64180 Memory Mapping and Control</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#hd64180extensions">HD64180 Extensions</a><br>
+<a href="#hd64180internaliomap">HD64180 Internal I/O Map</a><br>
+<a href="#hd64180newopcodesz80extension">HD64180 New Opcodes (Z80 Extension)</a><br>
+<a href="#hd64180serialioportsasciandcsio">HD64180 Serial I/O Ports (ASCI and CSI/O)</a><br>
+<a href="#hd64180timersprtandfrc">HD64180 Timers (PRT and FRC)</a><br>
+<a href="#hd64180directmemoryaccessdma">HD64180 Direct Memory Access (DMA)</a><br>
+<a href="#hd64180interrupts">HD64180 Interrupts</a><br>
+<a href="#hd64180memorymappingandcontrol">HD64180 Memory Mapping and Control</a><br>
+<a href="#hd64180extensions">HD64180 Extensions</a><br>
 <br>
 The system clock (PHI) is half the frequency of the crystal. Supported PHI
 values are 6.144MHz, 4.608MHz, 3.072MHz (these values allow to program ASCI
@@ -21122,10 +21122,10 @@ Otherwise return values are useless garbage (when result = 0200h..Infinite).<br>
   <a name="snestimings"></a>&nbsp;
   SNES Timings
 </font></td></tr></tbody></table><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snestimingoscillators">SNES Timing Oscillators</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snestiminghvcounters">SNES Timing H/V Counters</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snestiminghvevents">SNES Timing H/V Events</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snestimingppumemoryaccesses">SNES Timing PPU Memory Accesses</a><br>
+<a href="#snestimingoscillators">SNES Timing Oscillators</a><br>
+<a href="#snestiminghvcounters">SNES Timing H/V Counters</a><br>
+<a href="#snestiminghvevents">SNES Timing H/V Events</a><br>
+<a href="#snestimingppumemoryaccesses">SNES Timing PPU Memory Accesses</a><br>
 <br>
 <br>
 
@@ -21429,32 +21429,32 @@ Observe that the OAM address in Port 2102h is scattered during drawing period.<b
   SNES Pinouts
 </font></td></tr></tbody></table><br>
 <b>External Connector Pinouts</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollerspinouts">SNES Controllers Pinouts</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaudiovideoconnectorpinouts">SNES Audio/Video Connector Pinouts</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespowersupply">SNES Power Supply</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesexpansionportextpinouts">SNES Expansion Port (EXT) Pinouts</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartridgeslotpinouts">SNES Cartridge Slot Pinouts</a><br>
+<a href="#snescontrollerspinouts">SNES Controllers Pinouts</a><br>
+<a href="#snesaudiovideoconnectorpinouts">SNES Audio/Video Connector Pinouts</a><br>
+<a href="#snespowersupply">SNES Power Supply</a><br>
+<a href="#snesexpansionportextpinouts">SNES Expansion Port (EXT) Pinouts</a><br>
+<a href="#snescartridgeslotpinouts">SNES Cartridge Slot Pinouts</a><br>
 <br>
 <b>Chipset Pinouts</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#sneschipset">SNES Chipset</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutscpuchip">SNES Pinouts CPU Chip</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutsppuchips">SNES Pinouts PPU Chips</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutsapuchips">SNES Pinouts APU Chips</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutsromchips">SNES Pinouts ROM Chips</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutsramchips">SNES Pinouts RAM Chips</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutscicchips">SNES Pinouts CIC Chips</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutsmadchips">SNES Pinouts MAD Chips</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutsmiscchips">SNES Pinouts Misc Chips</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutsgsuchips">SNES Pinouts GSU Chips</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutscx4chip">SNES Pinouts CX4 Chip</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutssa1chip">SNES Pinouts SA1 Chip</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutsdecompressionchips">SNES Pinouts Decompression Chips</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutsbsxconnectors">SNES Pinouts BSX Connectors</a><br>
+<a href="#sneschipset">SNES Chipset</a><br>
+<a href="#snespinoutscpuchip">SNES Pinouts CPU Chip</a><br>
+<a href="#snespinoutsppuchips">SNES Pinouts PPU Chips</a><br>
+<a href="#snespinoutsapuchips">SNES Pinouts APU Chips</a><br>
+<a href="#snespinoutsromchips">SNES Pinouts ROM Chips</a><br>
+<a href="#snespinoutsramchips">SNES Pinouts RAM Chips</a><br>
+<a href="#snespinoutscicchips">SNES Pinouts CIC Chips</a><br>
+<a href="#snespinoutsmadchips">SNES Pinouts MAD Chips</a><br>
+<a href="#snespinoutsmiscchips">SNES Pinouts Misc Chips</a><br>
+<a href="#snespinoutsgsuchips">SNES Pinouts GSU Chips</a><br>
+<a href="#snespinoutscx4chip">SNES Pinouts CX4 Chip</a><br>
+<a href="#snespinoutssa1chip">SNES Pinouts SA1 Chip</a><br>
+<a href="#snespinoutsdecompressionchips">SNES Pinouts Decompression Chips</a><br>
+<a href="#snespinoutsbsxconnectors">SNES Pinouts BSX Connectors</a><br>
 <br>
 <b>Mods</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescommonmods">SNES Common Mods</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollermods">SNES Controller Mods</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesxboouploadwramboot">SNES Xboo Upload (WRAM Boot)</a><br>
+<a href="#snescommonmods">SNES Common Mods</a><br>
+<a href="#snescontrollermods">SNES Controller Mods</a><br>
+<a href="#snesxboouploadwramboot">SNES Xboo Upload (WRAM Boot)</a><br>
 <br>
 <br>
 
@@ -23207,20 +23207,20 @@ from WRAM to ROM mapping occurs circa 100us after RESET).<br>
   CPU 65XX Microprocessor
 </font></td></tr></tbody></table><br>
 <b>Overview</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#cpuregistersandflags">CPU Registers and Flags</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#cpumemoryaddressing">CPU Memory Addressing</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#cpuclockcycles">CPU Clock Cycles</a><br>
+<a href="#cpuregistersandflags">CPU Registers and Flags</a><br>
+<a href="#cpumemoryaddressing">CPU Memory Addressing</a><br>
+<a href="#cpuclockcycles">CPU Clock Cycles</a><br>
 <br>
 <b>Instruction Set</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#cpumemoryandregistertransfers">CPU Memory and Register Transfers</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#cpuarithmeticlogicaloperations">CPU Arithmetic/Logical Operations</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#cpurotateandshiftinstructions">CPU Rotate and Shift Instructions</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#cpujumpandcontrolinstructions">CPU Jump and Control Instructions</a><br>
+<a href="#cpumemoryandregistertransfers">CPU Memory and Register Transfers</a><br>
+<a href="#cpuarithmeticlogicaloperations">CPU Arithmetic/Logical Operations</a><br>
+<a href="#cpurotateandshiftinstructions">CPU Rotate and Shift Instructions</a><br>
+<a href="#cpujumpandcontrolinstructions">CPU Jump and Control Instructions</a><br>
 <br>
 <b>Other Info</b><br>
-<a href="http://problemkaputt.de/fullsnes.htm#cpuassemblerdirectivessyntax">CPU Assembler Directives/Syntax</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#cpuglitches">CPU Glitches</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#cputhe65xxfamily">CPU The 65XX Family</a><br>
+<a href="#cpuassemblerdirectivessyntax">CPU Assembler Directives/Syntax</a><br>
+<a href="#cpuglitches">CPU Glitches</a><br>
+<a href="#cputhe65xxfamily">CPU The 65XX Family</a><br>
 <br>
 <br>
 
@@ -23978,309 +23978,309 @@ http://nocash.emubase.de/email.htm - contact<br>
   <a name="index"></a>&nbsp;
   Index
 </font></td></tr></tbody></table><br>
-<a href="http://problemkaputt.de/fullsnes.htm#contents">Contents</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesiomap">SNES I/O Map</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesmemory">SNES Memory</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesmemorymap">SNES Memory Map</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesmemorycontrol">SNES Memory Control</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesmemoryworkramaccess">SNES Memory Work RAM Access</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesmemoryoamaccessspriteattributes">SNES Memory OAM Access (Sprite Attributes)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesmemoryvramaccesstileandbgmap">SNES Memory VRAM Access (Tile and BG Map)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesmemorycgramaccesspalettememory">SNES Memory CGRAM Access (Palette Memory)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesdmatransfers">SNES DMA Transfers</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesdmaandhdmastartenableregisters">SNES DMA and HDMA Start/Enable Registers</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesdmaandhdmachannel07registers">SNES DMA and HDMA Channel 0..7 Registers</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesdmaandhdmanotes">SNES DMA and HDMA Notes</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespictureprocessingunitppu">SNES Picture Processing Unit (PPU)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesppucontrol">SNES PPU Control</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesppubgcontrol">SNES PPU BG Control</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesppurotationscaling">SNES PPU Rotation/Scaling</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesppuspritesobjs">SNES PPU Sprites (OBJs)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesppuvideomemoryvram">SNES PPU Video Memory (VRAM)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesppucolorpalettememorycgramanddirectcolors">SNES PPU Color Palette Memory (CGRAM) and Direct Colors</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesppuwindow">SNES PPU Window</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesppucolormath">SNES PPU Color-Math</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespputimersandstatus">SNES PPU Timers and Status</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesppuinterrupts">SNES PPU Interrupts</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesppuresolution">SNES PPU Resolution</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesppuoffsetpertilemode">SNES PPU Offset-Per-Tile Mode</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaudioprocessingunitapu">SNES Audio Processing Unit (APU)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesapumemoryandiomap">SNES APU Memory and I/O Map</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesapublockdiagram">SNES APU Block Diagram</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesapuspc700cpuoverview">SNES APU SPC700 CPU Overview</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesapuspc700cpuloadstorecommands">SNES APU SPC700 CPU Load/Store Commands</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesapuspc700cpualucommands">SNES APU SPC700 CPU ALU Commands</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesapuspc700cpujumpcontrolcommands">SNES APU SPC700 CPU Jump/Control Commands</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesapuspc700ioports">SNES APU SPC700 I/O Ports</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesapumaincpucommunicationport">SNES APU Main CPU Communication Port</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesapudspbrrsamples">SNES APU DSP BRR Samples</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesapudspbrrpitch">SNES APU DSP BRR Pitch</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesapudspadsrgainenvelope">SNES APU DSP ADSR/Gain Envelope</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesapudspvolumeregisters">SNES APU DSP Volume Registers</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesapudspcontrolregisters">SNES APU DSP Control Registers</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesapudspechoregisters">SNES APU DSP Echo Registers</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesapulowleveltimings">SNES APU Low Level Timings</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesmathsmultiplydivide">SNES Maths Multiply/Divide</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollers">SNES Controllers</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersioportsautomaticreading">SNES Controllers I/O Ports - Automatic Reading</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersioportsmanualreading">SNES Controllers I/O Ports - Manual Reading</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollershardwareidcodes">SNES Controllers Hardware ID Codes</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersdetectingcontrollersupportofromimages">SNES Controllers Detecting Controller Support of ROM-Images</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersjoypad">SNES Controllers Joypad</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersmousetwobuttonmouse">SNES Controllers Mouse (Two-button Mouse)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersmousegames">SNES Controllers Mouse Games</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersmultiplayer5mp5fiveplayeradaptor">SNES Controllers Multiplayer 5 (MP5) (Five Player Adaptor)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersmultiplayer5unsupportedhardware">SNES Controllers Multiplayer 5 - Unsupported Hardware</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersmultiplayer5supportedgames">SNES Controllers Multiplayer 5 - Supported Games</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollerssuperscopelightgun">SNES Controllers SuperScope (Lightgun)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollerskonamijustifierlightgun">SNES Controllers Konami Justifier (Lightgun)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersmacslightgun">SNES Controllers M.A.C.S. (Lightgun)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollerstwintap">SNES Controllers Twin Tap</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersmiraclepiano">SNES Controllers Miracle Piano</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersmiraclepianocontrollerport">SNES Controllers Miracle Piano Controller Port</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersmiraclepianomidicommands">SNES Controllers Miracle Piano MIDI Commands</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersmiraclepianoinstruments">SNES Controllers Miracle Piano Instruments</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersmiraclepinoutsandcomponentlist">SNES Controllers Miracle Pinouts and Component List</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersnttdatapadjoypadwithnumerickeypad">SNES Controllers NTT Data Pad (joypad with numeric keypad)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersxbandkeyboard">SNES Controllers X-Band Keyboard</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollerstiltmotionsensors">SNES Controllers Tilt/Motion Sensors</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollerslasabirdiegolfclub">SNES Controllers Lasabirdie (golf club)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersexertainmentbicycleexercisingmachine">SNES Controllers Exertainment (bicycle exercising machine)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersexertainmentioports">SNES Controllers Exertainment - I/O Ports</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersexertainmentrs232controller">SNES Controllers Exertainment - RS232 Controller</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersexertainmentrs232datapacketsconfiguration">SNES Controllers Exertainment - RS232 Data Packets &amp; Configuration</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersexertainmentrs232datapacketsloginphase">SNES Controllers Exertainment - RS232 Data Packets Login Phase</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersexertainmentrs232datapacketsbikingphase">SNES Controllers Exertainment - RS232 Data Packets Biking Phase</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersexertainmentdrawings">SNES Controllers Exertainment - Drawings</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollerspachinko">SNES Controllers Pachinko</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollersotherinputs">SNES Controllers Other Inputs</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaddonturbofileexternalbackupmemoryforstoringgamepositions">SNES Add-On Turbo File (external backup memory for storing game positions)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaddonturbofiletfiimodetransmissionprotocol">SNES Add-On Turbo File - TFII Mode Transmission Protocol</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaddonturbofiletfiimodefilesystem">SNES Add-On Turbo File - TFII Mode Filesystem</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaddonturbofilestfmodetransmissionprotocol">SNES Add-On Turbo File - STF Mode Transmission Protocol</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaddonturbofilestfmodefilesystem">SNES Add-On Turbo File - STF Mode Filesystem</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaddonturbofilegames">SNES Add-On Turbo File - Games</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaddonbarcodebattlerbarcodereader">SNES Add-On Barcode Battler (barcode reader)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaddonbarcodetransmissionio">SNES Add-On Barcode Transmission I/O</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaddonbarcodebattlerdrawings">SNES Add-On Barcode Battler Drawings</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaddonsfcmodemforjrapat">SNES Add-On SFC Modem (for JRA PAT)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaddonsfcmodemdataio">SNES Add-On SFC Modem - Data I/O</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaddonsfcmodemmisc">SNES Add-On SFC Modem - Misc</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaddonvoicekunirtransmitterreceiverforusewithcdplayers">SNES Add-On Voice-Kun (IR-transmitter/receiver for use with CD Players)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartridges">SNES Cartridges</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartridgeromheader">SNES Cartridge ROM Header</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartridgepcbs">SNES Cartridge PCBs</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartridgeromimageheadersandfileextensions">SNES Cartridge ROM-Image Headers and File Extensions</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartridgeromimageinterleave">SNES Cartridge ROM-Image Interleave</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartridgeciclockoutchip">SNES Cartridge CIC Lockout Chip</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartridgecicpseudocode">SNES Cartridge CIC Pseudo Code</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartridgecicinstructionset">SNES Cartridge CIC Instruction Set</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartridgecicnotes">SNES Cartridge CIC Notes</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartridgecicversions">SNES Cartridge CIC Versions</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartlorommappingromdividedinto32kbanksaround1500games">SNES Cart LoROM Mapping (ROM divided into 32K banks) (around 1500 games)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescarthirommappingromdividedinto64kbanksaround500games">SNES Cart HiROM Mapping (ROM divided into 64K banks) (around 500 games)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsa1programmable65c816cpuakasuperaccelerator35games">SNES Cart SA-1 (programmable 65C816 CPU) (aka Super Accelerator) (35 games)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsa1games">SNES Cart SA-1 Games</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsa1iomap">SNES Cart SA-1 I/O Map</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsa1interruptcontrolonsnesside">SNES Cart SA-1 Interrupt/Control on SNES Side</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsa1interruptcontrolonsa1side">SNES Cart SA-1 Interrupt/Control on SA-1 Side</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsa1timer">SNES Cart SA-1 Timer</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsa1memorycontrol">SNES Cart SA-1 Memory Control</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsa1dmatransfers">SNES Cart SA-1 DMA Transfers</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsa1characterconversion">SNES Cart SA-1 Character Conversion</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsa1arithmeticmaths">SNES Cart SA-1 Arithmetic Maths</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsa1variablelengthbitprocessing">SNES Cart SA-1 Variable-Length Bit Processing</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartgsunprogrammablerisccpuakasuperfxmariochip10games">SNES Cart GSU-n (programmable RISC CPU) (aka Super FX/Mario Chip) (10 games)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartgsunlistofgameschipsandpcbversions">SNES Cart GSU-n List of Games, Chips, and PCB versions</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartgsunmemorymap">SNES Cart GSU-n Memory Map</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartgsuniomap">SNES Cart GSU-n I/O Map</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartgsungeneralioports">SNES Cart GSU-n General I/O Ports</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartgsunbitmapioports">SNES Cart GSU-n Bitmap I/O Ports</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartgsuncpumovopcodes">SNES Cart GSU-n CPU MOV Opcodes</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartgsuncpualuopcodes">SNES Cart GSU-n CPU ALU Opcodes</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartgsuncpujmpandprefixopcodes">SNES Cart GSU-n CPU JMP and Prefix Opcodes</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartgsuncpupseudoopcodes">SNES Cart GSU-n CPU Pseudo Opcodes</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartgsuncpumisc">SNES Cart GSU-n CPU Misc</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartgsuncodecache">SNES Cart GSU-n Code-Cache</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartgsunpixelcache">SNES Cart GSU-n Pixel-Cache</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartgsunothercaches">SNES Cart GSU-n Other Caches</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcapcomcx4programmablerisccpumegamanx232games">SNES Cart Capcom CX4 (programmable RISC CPU) (Mega Man X 2-3) (2 games)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcapcomcx4ioports">SNES Cart Capcom CX4 - I/O Ports</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcapcomcx4opcodes">SNES Cart Capcom CX4 - Opcodes</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcapcomcx4functions">SNES Cart Capcom CX4 - Functions</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartdspnst010st011preprogrammednecupd77c25cpu23games">SNES Cart DSP-n/ST010/ST011 (pre-programmed NEC uPD77C25 CPU) (23 games)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartdspnst010st011necupd77c25registersflagsoverview">SNES Cart DSP-n/ST010/ST011 - NEC uPD77C25 - Registers &amp; Flags &amp; Overview</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartdspnst010st011necupd77c25aluandldinstructions">SNES Cart DSP-n/ST010/ST011 - NEC uPD77C25 - ALU and LD Instructions</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartdspnst010st011necupd77c25jpinstructions">SNES Cart DSP-n/ST010/ST011 - NEC uPD77C25 - JP Instructions</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartdspnst010st011listofgamesusingthatchips">SNES Cart DSP-n/ST010/ST011 - List of Games using that chips</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartdspnst010st011biosfunctions">SNES Cart DSP-n/ST010/ST011 - BIOS Functions</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsetast018preprogrammedarmcpu1game">SNES Cart Seta ST018 (pre-programmed ARM CPU) (1 game)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartobc1objcontroller1game">SNES Cart OBC1 (OBJ Controller) (1 game)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsdd1datadecompressor2games">SNES Cart S-DD1 (Data Decompressor) (2 games)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsdd1decompressionalgorithm">SNES Cart S-DD1 Decompression Algorithm</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartspc7110datadecompressor3games">SNES Cart SPC7110 (Data Decompressor) (3 games)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartspc7110memoryandiomap">SNES Cart SPC7110 Memory and I/O Map</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartspc7110decompressionioports">SNES Cart SPC7110 Decompression I/O Ports</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartspc7110directdataromaccess">SNES Cart SPC7110 Direct Data ROM Access</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartspc7110multiplydivideunit">SNES Cart SPC7110 Multiply/Divide Unit</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartspc7110withrtc4513realtimeclock1game">SNES Cart SPC7110 with RTC-4513 Real Time Clock (1 game)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartspc7110decompressionalgorithm">SNES Cart SPC7110 Decompression Algorithm</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartspc7110notes">SNES Cart SPC7110 Notes</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartunlicensedvariants">SNES Cart Unlicensed Variants</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsrtcrealtimeclock1game">SNES Cart S-RTC (Realtime Clock) (1 game)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsupergameboy">SNES Cart Super Gameboy</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewsatellitereceiverminiflashcard">SNES Cart Satellaview (satellite receiver &amp; mini flashcard)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewiomap">SNES Cart Satellaview I/O Map</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewioportsofmccmemorycontroller">SNES Cart Satellaview I/O Ports of MCC Memory Controller</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewioreceiverdatastreams">SNES Cart Satellaview I/O Receiver Data Streams</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewioreceiverdatastreamsnotes">SNES Cart Satellaview I/O Receiver Data Streams (Notes)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewioreceivercontrol">SNES Cart Satellaview I/O Receiver Control</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewioflashdetectiontype1234">SNES Cart Satellaview I/O FLASH Detection (Type 1,2,3,4)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewioflashaccesstype134">SNES Cart Satellaview I/O FLASH Access (Type 1,3,4)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewioflashaccesstype2">SNES Cart Satellaview I/O FLASH Access (Type 2)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewpacketheadersandframes">SNES Cart Satellaview Packet Headers and Frames</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewchannelsandchannelmap">SNES Cart Satellaview Channels and Channel Map</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewtownstatuspacket">SNES Cart Satellaview Town Status Packet</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewdirectorypacket">SNES Cart Satellaview Directory Packet</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewexpansiondataatendofdirectorypackets">SNES Cart Satellaview Expansion Data (at end of Directory Packets)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewotherpackets">SNES Cart Satellaview Other Packets</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewbuildings">SNES Cart Satellaview Buildings</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewpeople">SNES Cart Satellaview People</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewitems">SNES Cart Satellaview Items</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewsrambatterybacked">SNES Cart Satellaview SRAM (Battery-backed)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewflashfileheader">SNES Cart Satellaview FLASH File Header</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewbiosfunctionsummary">SNES Cart Satellaview BIOS Function Summary</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewinterpretertokensummary">SNES Cart Satellaview Interpreter Token Summary</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsatellaviewchipsets">SNES Cart Satellaview Chipsets</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartdatapackslotssatellaviewlikeminicartridgeslot">SNES Cart Data Pack Slots (satellaview-like mini-cartridge slot)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartnintendopowerflashcard">SNES Cart Nintendo Power (flashcard)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartnintendopowerioports">SNES Cart Nintendo Power - I/O Ports</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartnintendopowerdirectory">SNES Cart Nintendo Power - Directory</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsufamiturbominicartridgeadaptor">SNES Cart Sufami Turbo (Mini Cartridge Adaptor)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsufamiturbogeneralnotes">SNES Cart Sufami Turbo General Notes</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsufamiturboromramheaders">SNES Cart Sufami Turbo ROM/RAM Headers</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartsufamiturbobiosfunctionscharset">SNES Cart Sufami Turbo BIOS Functions &amp; Charset</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartxband2400baudmodem">SNES Cart X-Band (2400 baud Modem)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartxbandmisc">SNES Cart X-Band Misc</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartxbandsmartcardreader">SNES Cart X-Band Smart Card Reader</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartxbandrockwellports">SNES Cart X-Band Rockwell Ports</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartxbandrockwellnotes">SNES Cart X-Band Rockwell Notes</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartflashbackup">SNES Cart FLASH Backup</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcheatdevices">SNES Cart Cheat Devices</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcheatdevicescodeformats">SNES Cart Cheat Devices - Code Formats</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcheatdevicesgamegenie">SNES Cart Cheat Devices - Game Genie</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcheatdevicesproactionreplayioports">SNES Cart Cheat Devices - Pro Action Replay I/O Ports</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcheatdevicesproactionreplaymemory">SNES Cart Cheat Devices - Pro Action Replay Memory</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcheatdevicesxterminatorgamewizard">SNES Cart Cheat Devices - X-Terminator &amp; Game Wizard</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcheatdevicesgamesaver">SNES Cart Cheat Devices - Game Saver</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcheatdevicestheory">SNES Cart Cheat Devices - Theory</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescarttristarakasuper8allowstoplaynesgamesonthesnes">SNES Cart Tri-Star (aka Super 8) (allows to play NES games on the SNES)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartpiratexin1multicarts1">SNES Cart Pirate X-in-1 Multicarts (1)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartpiratexin1multicarts2">SNES Cart Pirate X-in-1 Multicarts (2)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcopiers">SNES Cart Copiers</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcopiersfrontfareastsupermagicomsuperwildcard">SNES Cart Copiers - Front Fareast (Super Magicom &amp; Super Wild Card)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcopierscclsupercomprofighter">SNES Cart Copiers - CCL (Supercom &amp; Pro Fighter)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcopiersbunggamedoctor">SNES Cart Copiers - Bung (Game Doctor)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcopierssuperufo">SNES Cart Copiers - Super UFO</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcopierssanetingsuperdiskinterceptor">SNES Cart Copiers - Sane Ting (Super Disk Interceptor)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcopiersgamarscopier">SNES Cart Copiers - Gamars Copier</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcopiersvenusmultigamehunter">SNES Cart Copiers - Venus (Multi Game Hunter)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcopiersothers">SNES Cart Copiers - Others</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcopiersmisc">SNES Cart Copiers - Misc</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcopiersfloppydisccontrollers">SNES Cart Copiers - Floppy Disc Controllers</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcopiersfloppydiscnecupd765commands">SNES Cart Copiers - Floppy Disc NEC uPD765 Commands</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcopiersfloppydiscfat12format">SNES Cart Copiers - Floppy Disc FAT12 Format</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartcopiersbioses">SNES Cart Copiers - BIOSes</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#sneshotelboxesandarcademachines">SNES Hotel Boxes and Arcade Machines</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#nssmemoryandiomaps">NSS Memory and I/O Maps</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#nssioportscontrolregisters">NSS I/O Ports - Control Registers</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#nssioportsbuttoninputsandcoincontrol">NSS I/O Ports - Button Inputs and Coin Control</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#nssioportsrtcandosd">NSS I/O Ports - RTC and OSD</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#nssioportseepromandprom">NSS I/O Ports - EEPROM and PROM</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#nssbiosandinstrommaps">NSS BIOS and INST ROM Maps</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#nssinterpretertokens">NSS Interpreter Tokens</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#nsscontrols">NSS Controls</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#nssgamesbiosesandromimages">NSS Games, BIOSes and ROM-Images</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#nsscomponentlists">NSS Component Lists</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#nsspinouts">NSS Pin-Outs</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#nssonscreencontrollerosd">NSS On-Screen Controller (OSD)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#sfcboxoverview">SFC-Box Overview</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#sfcboxcoprocessorhd64180extendedz80">SFC-Box Coprocessor (HD64180) (extended Z80)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#sfcboxmemoryiomaps">SFC-Box Memory &amp; I/O Maps</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#sfcboxioportscustomports">SFC-Box I/O Ports (Custom Ports)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#sfcboxioportshd64180ports">SFC-Box I/O Ports (HD64180 Ports)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#sfcboxosdchiponscreendisplaycontroller">SFC-Box OSD Chip (On-Screen Display Controller)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#sfcboxgromformat">SFC-Box GROM Format</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#sfcboxcomponentlistcartridges">SFC-Box Component List (Cartridges)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#sfcboxcomponentlistconsole">SFC-Box Component List (Console)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#rtcs3520realtimeclock">RTC S-3520 (Real-Time Clock)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#z80cpuspecifications">Z80 CPU Specifications</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#z80registerset">Z80 Register Set</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#z80flags">Z80 Flags</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#z80instructionformat">Z80 Instruction Format</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#z80loadcommands">Z80 Load Commands</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#z80arithmeticlogicalcommands">Z80 Arithmetic/Logical Commands</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#z80rotateshiftandsinglebitoperations">Z80 Rotate/Shift and Singlebit Operations</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#z80jumpcommandsinterrupts">Z80 Jumpcommands &amp; Interrupts</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#z80iocommands">Z80 I/O Commands</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#z80interrupts">Z80 Interrupts</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#z80meaninglessandduplicatedopcodes">Z80 Meaningless and Duplicated Opcodes</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#z80garbageinflagregister">Z80 Garbage in Flag Register</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#z80compatibility">Z80 Compatibility</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#z80pinouts">Z80 Pin-Outs</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#z80localusage">Z80 Local Usage</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#hd64180">HD64180</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#hd64180internaliomap">HD64180 Internal I/O Map</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#hd64180newopcodesz80extension">HD64180 New Opcodes (Z80 Extension)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#hd64180serialioportsasciandcsio">HD64180 Serial I/O Ports (ASCI and CSI/O)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#hd64180timersprtandfrc">HD64180 Timers (PRT and FRC)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#hd64180directmemoryaccessdma">HD64180 Direct Memory Access (DMA)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#hd64180interrupts">HD64180 Interrupts</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#hd64180memorymappingandcontrol">HD64180 Memory Mapping and Control</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#hd64180extensions">HD64180 Extensions</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesdecompressionformats">SNES Decompression Formats</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesunpredictablethings">SNES Unpredictable Things</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snestimings">SNES Timings</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snestimingoscillators">SNES Timing Oscillators</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snestiminghvcounters">SNES Timing H/V Counters</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snestiminghvevents">SNES Timing H/V Events</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snestimingppumemoryaccesses">SNES Timing PPU Memory Accesses</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinouts">SNES Pinouts</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollerspinouts">SNES Controllers Pinouts</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesaudiovideoconnectorpinouts">SNES Audio/Video Connector Pinouts</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespowersupply">SNES Power Supply</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesexpansionportextpinouts">SNES Expansion Port (EXT) Pinouts</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescartridgeslotpinouts">SNES Cartridge Slot Pinouts</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#sneschipset">SNES Chipset</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutscpuchip">SNES Pinouts CPU Chip</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutsppuchips">SNES Pinouts PPU Chips</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutsapuchips">SNES Pinouts APU Chips</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutsromchips">SNES Pinouts ROM Chips</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutsramchips">SNES Pinouts RAM Chips</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutscicchips">SNES Pinouts CIC Chips</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutsmadchips">SNES Pinouts MAD Chips</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutsrtcchips">SNES Pinouts RTC Chips</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutsmiscchips">SNES Pinouts Misc Chips</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutsgsuchips">SNES Pinouts GSU Chips</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutscx4chip">SNES Pinouts CX4 Chip</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutssa1chip">SNES Pinouts SA1 Chip</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutsdecompressionchips">SNES Pinouts Decompression Chips</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snespinoutsbsxconnectors">SNES Pinouts BSX Connectors</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescommonmods">SNES Common Mods</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snescontrollermods">SNES Controller Mods</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#snesxboouploadwramboot">SNES Xboo Upload (WRAM Boot)</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#cpu65xxmicroprocessor">CPU 65XX Microprocessor</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#cpuregistersandflags">CPU Registers and Flags</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#cpumemoryaddressing">CPU Memory Addressing</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#cpuclockcycles">CPU Clock Cycles</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#cpumemoryandregistertransfers">CPU Memory and Register Transfers</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#cpuarithmeticlogicaloperations">CPU Arithmetic/Logical Operations</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#cpurotateandshiftinstructions">CPU Rotate and Shift Instructions</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#cpujumpandcontrolinstructions">CPU Jump and Control Instructions</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#cpuassemblerdirectivessyntax">CPU Assembler Directives/Syntax</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#cpuglitches">CPU Glitches</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#cputhe65xxfamily">CPU The 65XX Family</a><br>
-<a href="http://problemkaputt.de/fullsnes.htm#aboutcredits">About/Credits</a><br>
+<a href="#contents">Contents</a><br>
+<a href="#snesiomap">SNES I/O Map</a><br>
+<a href="#snesmemory">SNES Memory</a><br>
+<a href="#snesmemorymap">SNES Memory Map</a><br>
+<a href="#snesmemorycontrol">SNES Memory Control</a><br>
+<a href="#snesmemoryworkramaccess">SNES Memory Work RAM Access</a><br>
+<a href="#snesmemoryoamaccessspriteattributes">SNES Memory OAM Access (Sprite Attributes)</a><br>
+<a href="#snesmemoryvramaccesstileandbgmap">SNES Memory VRAM Access (Tile and BG Map)</a><br>
+<a href="#snesmemorycgramaccesspalettememory">SNES Memory CGRAM Access (Palette Memory)</a><br>
+<a href="#snesdmatransfers">SNES DMA Transfers</a><br>
+<a href="#snesdmaandhdmastartenableregisters">SNES DMA and HDMA Start/Enable Registers</a><br>
+<a href="#snesdmaandhdmachannel07registers">SNES DMA and HDMA Channel 0..7 Registers</a><br>
+<a href="#snesdmaandhdmanotes">SNES DMA and HDMA Notes</a><br>
+<a href="#snespictureprocessingunitppu">SNES Picture Processing Unit (PPU)</a><br>
+<a href="#snesppucontrol">SNES PPU Control</a><br>
+<a href="#snesppubgcontrol">SNES PPU BG Control</a><br>
+<a href="#snesppurotationscaling">SNES PPU Rotation/Scaling</a><br>
+<a href="#snesppuspritesobjs">SNES PPU Sprites (OBJs)</a><br>
+<a href="#snesppuvideomemoryvram">SNES PPU Video Memory (VRAM)</a><br>
+<a href="#snesppucolorpalettememorycgramanddirectcolors">SNES PPU Color Palette Memory (CGRAM) and Direct Colors</a><br>
+<a href="#snesppuwindow">SNES PPU Window</a><br>
+<a href="#snesppucolormath">SNES PPU Color-Math</a><br>
+<a href="#snespputimersandstatus">SNES PPU Timers and Status</a><br>
+<a href="#snesppuinterrupts">SNES PPU Interrupts</a><br>
+<a href="#snesppuresolution">SNES PPU Resolution</a><br>
+<a href="#snesppuoffsetpertilemode">SNES PPU Offset-Per-Tile Mode</a><br>
+<a href="#snesaudioprocessingunitapu">SNES Audio Processing Unit (APU)</a><br>
+<a href="#snesapumemoryandiomap">SNES APU Memory and I/O Map</a><br>
+<a href="#snesapublockdiagram">SNES APU Block Diagram</a><br>
+<a href="#snesapuspc700cpuoverview">SNES APU SPC700 CPU Overview</a><br>
+<a href="#snesapuspc700cpuloadstorecommands">SNES APU SPC700 CPU Load/Store Commands</a><br>
+<a href="#snesapuspc700cpualucommands">SNES APU SPC700 CPU ALU Commands</a><br>
+<a href="#snesapuspc700cpujumpcontrolcommands">SNES APU SPC700 CPU Jump/Control Commands</a><br>
+<a href="#snesapuspc700ioports">SNES APU SPC700 I/O Ports</a><br>
+<a href="#snesapumaincpucommunicationport">SNES APU Main CPU Communication Port</a><br>
+<a href="#snesapudspbrrsamples">SNES APU DSP BRR Samples</a><br>
+<a href="#snesapudspbrrpitch">SNES APU DSP BRR Pitch</a><br>
+<a href="#snesapudspadsrgainenvelope">SNES APU DSP ADSR/Gain Envelope</a><br>
+<a href="#snesapudspvolumeregisters">SNES APU DSP Volume Registers</a><br>
+<a href="#snesapudspcontrolregisters">SNES APU DSP Control Registers</a><br>
+<a href="#snesapudspechoregisters">SNES APU DSP Echo Registers</a><br>
+<a href="#snesapulowleveltimings">SNES APU Low Level Timings</a><br>
+<a href="#snesmathsmultiplydivide">SNES Maths Multiply/Divide</a><br>
+<a href="#snescontrollers">SNES Controllers</a><br>
+<a href="#snescontrollersioportsautomaticreading">SNES Controllers I/O Ports - Automatic Reading</a><br>
+<a href="#snescontrollersioportsmanualreading">SNES Controllers I/O Ports - Manual Reading</a><br>
+<a href="#snescontrollershardwareidcodes">SNES Controllers Hardware ID Codes</a><br>
+<a href="#snescontrollersdetectingcontrollersupportofromimages">SNES Controllers Detecting Controller Support of ROM-Images</a><br>
+<a href="#snescontrollersjoypad">SNES Controllers Joypad</a><br>
+<a href="#snescontrollersmousetwobuttonmouse">SNES Controllers Mouse (Two-button Mouse)</a><br>
+<a href="#snescontrollersmousegames">SNES Controllers Mouse Games</a><br>
+<a href="#snescontrollersmultiplayer5mp5fiveplayeradaptor">SNES Controllers Multiplayer 5 (MP5) (Five Player Adaptor)</a><br>
+<a href="#snescontrollersmultiplayer5unsupportedhardware">SNES Controllers Multiplayer 5 - Unsupported Hardware</a><br>
+<a href="#snescontrollersmultiplayer5supportedgames">SNES Controllers Multiplayer 5 - Supported Games</a><br>
+<a href="#snescontrollerssuperscopelightgun">SNES Controllers SuperScope (Lightgun)</a><br>
+<a href="#snescontrollerskonamijustifierlightgun">SNES Controllers Konami Justifier (Lightgun)</a><br>
+<a href="#snescontrollersmacslightgun">SNES Controllers M.A.C.S. (Lightgun)</a><br>
+<a href="#snescontrollerstwintap">SNES Controllers Twin Tap</a><br>
+<a href="#snescontrollersmiraclepiano">SNES Controllers Miracle Piano</a><br>
+<a href="#snescontrollersmiraclepianocontrollerport">SNES Controllers Miracle Piano Controller Port</a><br>
+<a href="#snescontrollersmiraclepianomidicommands">SNES Controllers Miracle Piano MIDI Commands</a><br>
+<a href="#snescontrollersmiraclepianoinstruments">SNES Controllers Miracle Piano Instruments</a><br>
+<a href="#snescontrollersmiraclepinoutsandcomponentlist">SNES Controllers Miracle Pinouts and Component List</a><br>
+<a href="#snescontrollersnttdatapadjoypadwithnumerickeypad">SNES Controllers NTT Data Pad (joypad with numeric keypad)</a><br>
+<a href="#snescontrollersxbandkeyboard">SNES Controllers X-Band Keyboard</a><br>
+<a href="#snescontrollerstiltmotionsensors">SNES Controllers Tilt/Motion Sensors</a><br>
+<a href="#snescontrollerslasabirdiegolfclub">SNES Controllers Lasabirdie (golf club)</a><br>
+<a href="#snescontrollersexertainmentbicycleexercisingmachine">SNES Controllers Exertainment (bicycle exercising machine)</a><br>
+<a href="#snescontrollersexertainmentioports">SNES Controllers Exertainment - I/O Ports</a><br>
+<a href="#snescontrollersexertainmentrs232controller">SNES Controllers Exertainment - RS232 Controller</a><br>
+<a href="#snescontrollersexertainmentrs232datapacketsconfiguration">SNES Controllers Exertainment - RS232 Data Packets &amp; Configuration</a><br>
+<a href="#snescontrollersexertainmentrs232datapacketsloginphase">SNES Controllers Exertainment - RS232 Data Packets Login Phase</a><br>
+<a href="#snescontrollersexertainmentrs232datapacketsbikingphase">SNES Controllers Exertainment - RS232 Data Packets Biking Phase</a><br>
+<a href="#snescontrollersexertainmentdrawings">SNES Controllers Exertainment - Drawings</a><br>
+<a href="#snescontrollerspachinko">SNES Controllers Pachinko</a><br>
+<a href="#snescontrollersotherinputs">SNES Controllers Other Inputs</a><br>
+<a href="#snesaddonturbofileexternalbackupmemoryforstoringgamepositions">SNES Add-On Turbo File (external backup memory for storing game positions)</a><br>
+<a href="#snesaddonturbofiletfiimodetransmissionprotocol">SNES Add-On Turbo File - TFII Mode Transmission Protocol</a><br>
+<a href="#snesaddonturbofiletfiimodefilesystem">SNES Add-On Turbo File - TFII Mode Filesystem</a><br>
+<a href="#snesaddonturbofilestfmodetransmissionprotocol">SNES Add-On Turbo File - STF Mode Transmission Protocol</a><br>
+<a href="#snesaddonturbofilestfmodefilesystem">SNES Add-On Turbo File - STF Mode Filesystem</a><br>
+<a href="#snesaddonturbofilegames">SNES Add-On Turbo File - Games</a><br>
+<a href="#snesaddonbarcodebattlerbarcodereader">SNES Add-On Barcode Battler (barcode reader)</a><br>
+<a href="#snesaddonbarcodetransmissionio">SNES Add-On Barcode Transmission I/O</a><br>
+<a href="#snesaddonbarcodebattlerdrawings">SNES Add-On Barcode Battler Drawings</a><br>
+<a href="#snesaddonsfcmodemforjrapat">SNES Add-On SFC Modem (for JRA PAT)</a><br>
+<a href="#snesaddonsfcmodemdataio">SNES Add-On SFC Modem - Data I/O</a><br>
+<a href="#snesaddonsfcmodemmisc">SNES Add-On SFC Modem - Misc</a><br>
+<a href="#snesaddonvoicekunirtransmitterreceiverforusewithcdplayers">SNES Add-On Voice-Kun (IR-transmitter/receiver for use with CD Players)</a><br>
+<a href="#snescartridges">SNES Cartridges</a><br>
+<a href="#snescartridgeromheader">SNES Cartridge ROM Header</a><br>
+<a href="#snescartridgepcbs">SNES Cartridge PCBs</a><br>
+<a href="#snescartridgeromimageheadersandfileextensions">SNES Cartridge ROM-Image Headers and File Extensions</a><br>
+<a href="#snescartridgeromimageinterleave">SNES Cartridge ROM-Image Interleave</a><br>
+<a href="#snescartridgeciclockoutchip">SNES Cartridge CIC Lockout Chip</a><br>
+<a href="#snescartridgecicpseudocode">SNES Cartridge CIC Pseudo Code</a><br>
+<a href="#snescartridgecicinstructionset">SNES Cartridge CIC Instruction Set</a><br>
+<a href="#snescartridgecicnotes">SNES Cartridge CIC Notes</a><br>
+<a href="#snescartridgecicversions">SNES Cartridge CIC Versions</a><br>
+<a href="#snescartlorommappingromdividedinto32kbanksaround1500games">SNES Cart LoROM Mapping (ROM divided into 32K banks) (around 1500 games)</a><br>
+<a href="#snescarthirommappingromdividedinto64kbanksaround500games">SNES Cart HiROM Mapping (ROM divided into 64K banks) (around 500 games)</a><br>
+<a href="#snescartsa1programmable65c816cpuakasuperaccelerator35games">SNES Cart SA-1 (programmable 65C816 CPU) (aka Super Accelerator) (35 games)</a><br>
+<a href="#snescartsa1games">SNES Cart SA-1 Games</a><br>
+<a href="#snescartsa1iomap">SNES Cart SA-1 I/O Map</a><br>
+<a href="#snescartsa1interruptcontrolonsnesside">SNES Cart SA-1 Interrupt/Control on SNES Side</a><br>
+<a href="#snescartsa1interruptcontrolonsa1side">SNES Cart SA-1 Interrupt/Control on SA-1 Side</a><br>
+<a href="#snescartsa1timer">SNES Cart SA-1 Timer</a><br>
+<a href="#snescartsa1memorycontrol">SNES Cart SA-1 Memory Control</a><br>
+<a href="#snescartsa1dmatransfers">SNES Cart SA-1 DMA Transfers</a><br>
+<a href="#snescartsa1characterconversion">SNES Cart SA-1 Character Conversion</a><br>
+<a href="#snescartsa1arithmeticmaths">SNES Cart SA-1 Arithmetic Maths</a><br>
+<a href="#snescartsa1variablelengthbitprocessing">SNES Cart SA-1 Variable-Length Bit Processing</a><br>
+<a href="#snescartgsunprogrammablerisccpuakasuperfxmariochip10games">SNES Cart GSU-n (programmable RISC CPU) (aka Super FX/Mario Chip) (10 games)</a><br>
+<a href="#snescartgsunlistofgameschipsandpcbversions">SNES Cart GSU-n List of Games, Chips, and PCB versions</a><br>
+<a href="#snescartgsunmemorymap">SNES Cart GSU-n Memory Map</a><br>
+<a href="#snescartgsuniomap">SNES Cart GSU-n I/O Map</a><br>
+<a href="#snescartgsungeneralioports">SNES Cart GSU-n General I/O Ports</a><br>
+<a href="#snescartgsunbitmapioports">SNES Cart GSU-n Bitmap I/O Ports</a><br>
+<a href="#snescartgsuncpumovopcodes">SNES Cart GSU-n CPU MOV Opcodes</a><br>
+<a href="#snescartgsuncpualuopcodes">SNES Cart GSU-n CPU ALU Opcodes</a><br>
+<a href="#snescartgsuncpujmpandprefixopcodes">SNES Cart GSU-n CPU JMP and Prefix Opcodes</a><br>
+<a href="#snescartgsuncpupseudoopcodes">SNES Cart GSU-n CPU Pseudo Opcodes</a><br>
+<a href="#snescartgsuncpumisc">SNES Cart GSU-n CPU Misc</a><br>
+<a href="#snescartgsuncodecache">SNES Cart GSU-n Code-Cache</a><br>
+<a href="#snescartgsunpixelcache">SNES Cart GSU-n Pixel-Cache</a><br>
+<a href="#snescartgsunothercaches">SNES Cart GSU-n Other Caches</a><br>
+<a href="#snescartcapcomcx4programmablerisccpumegamanx232games">SNES Cart Capcom CX4 (programmable RISC CPU) (Mega Man X 2-3) (2 games)</a><br>
+<a href="#snescartcapcomcx4ioports">SNES Cart Capcom CX4 - I/O Ports</a><br>
+<a href="#snescartcapcomcx4opcodes">SNES Cart Capcom CX4 - Opcodes</a><br>
+<a href="#snescartcapcomcx4functions">SNES Cart Capcom CX4 - Functions</a><br>
+<a href="#snescartdspnst010st011preprogrammednecupd77c25cpu23games">SNES Cart DSP-n/ST010/ST011 (pre-programmed NEC uPD77C25 CPU) (23 games)</a><br>
+<a href="#snescartdspnst010st011necupd77c25registersflagsoverview">SNES Cart DSP-n/ST010/ST011 - NEC uPD77C25 - Registers &amp; Flags &amp; Overview</a><br>
+<a href="#snescartdspnst010st011necupd77c25aluandldinstructions">SNES Cart DSP-n/ST010/ST011 - NEC uPD77C25 - ALU and LD Instructions</a><br>
+<a href="#snescartdspnst010st011necupd77c25jpinstructions">SNES Cart DSP-n/ST010/ST011 - NEC uPD77C25 - JP Instructions</a><br>
+<a href="#snescartdspnst010st011listofgamesusingthatchips">SNES Cart DSP-n/ST010/ST011 - List of Games using that chips</a><br>
+<a href="#snescartdspnst010st011biosfunctions">SNES Cart DSP-n/ST010/ST011 - BIOS Functions</a><br>
+<a href="#snescartsetast018preprogrammedarmcpu1game">SNES Cart Seta ST018 (pre-programmed ARM CPU) (1 game)</a><br>
+<a href="#snescartobc1objcontroller1game">SNES Cart OBC1 (OBJ Controller) (1 game)</a><br>
+<a href="#snescartsdd1datadecompressor2games">SNES Cart S-DD1 (Data Decompressor) (2 games)</a><br>
+<a href="#snescartsdd1decompressionalgorithm">SNES Cart S-DD1 Decompression Algorithm</a><br>
+<a href="#snescartspc7110datadecompressor3games">SNES Cart SPC7110 (Data Decompressor) (3 games)</a><br>
+<a href="#snescartspc7110memoryandiomap">SNES Cart SPC7110 Memory and I/O Map</a><br>
+<a href="#snescartspc7110decompressionioports">SNES Cart SPC7110 Decompression I/O Ports</a><br>
+<a href="#snescartspc7110directdataromaccess">SNES Cart SPC7110 Direct Data ROM Access</a><br>
+<a href="#snescartspc7110multiplydivideunit">SNES Cart SPC7110 Multiply/Divide Unit</a><br>
+<a href="#snescartspc7110withrtc4513realtimeclock1game">SNES Cart SPC7110 with RTC-4513 Real Time Clock (1 game)</a><br>
+<a href="#snescartspc7110decompressionalgorithm">SNES Cart SPC7110 Decompression Algorithm</a><br>
+<a href="#snescartspc7110notes">SNES Cart SPC7110 Notes</a><br>
+<a href="#snescartunlicensedvariants">SNES Cart Unlicensed Variants</a><br>
+<a href="#snescartsrtcrealtimeclock1game">SNES Cart S-RTC (Realtime Clock) (1 game)</a><br>
+<a href="#snescartsupergameboy">SNES Cart Super Gameboy</a><br>
+<a href="#snescartsatellaviewsatellitereceiverminiflashcard">SNES Cart Satellaview (satellite receiver &amp; mini flashcard)</a><br>
+<a href="#snescartsatellaviewiomap">SNES Cart Satellaview I/O Map</a><br>
+<a href="#snescartsatellaviewioportsofmccmemorycontroller">SNES Cart Satellaview I/O Ports of MCC Memory Controller</a><br>
+<a href="#snescartsatellaviewioreceiverdatastreams">SNES Cart Satellaview I/O Receiver Data Streams</a><br>
+<a href="#snescartsatellaviewioreceiverdatastreamsnotes">SNES Cart Satellaview I/O Receiver Data Streams (Notes)</a><br>
+<a href="#snescartsatellaviewioreceivercontrol">SNES Cart Satellaview I/O Receiver Control</a><br>
+<a href="#snescartsatellaviewioflashdetectiontype1234">SNES Cart Satellaview I/O FLASH Detection (Type 1,2,3,4)</a><br>
+<a href="#snescartsatellaviewioflashaccesstype134">SNES Cart Satellaview I/O FLASH Access (Type 1,3,4)</a><br>
+<a href="#snescartsatellaviewioflashaccesstype2">SNES Cart Satellaview I/O FLASH Access (Type 2)</a><br>
+<a href="#snescartsatellaviewpacketheadersandframes">SNES Cart Satellaview Packet Headers and Frames</a><br>
+<a href="#snescartsatellaviewchannelsandchannelmap">SNES Cart Satellaview Channels and Channel Map</a><br>
+<a href="#snescartsatellaviewtownstatuspacket">SNES Cart Satellaview Town Status Packet</a><br>
+<a href="#snescartsatellaviewdirectorypacket">SNES Cart Satellaview Directory Packet</a><br>
+<a href="#snescartsatellaviewexpansiondataatendofdirectorypackets">SNES Cart Satellaview Expansion Data (at end of Directory Packets)</a><br>
+<a href="#snescartsatellaviewotherpackets">SNES Cart Satellaview Other Packets</a><br>
+<a href="#snescartsatellaviewbuildings">SNES Cart Satellaview Buildings</a><br>
+<a href="#snescartsatellaviewpeople">SNES Cart Satellaview People</a><br>
+<a href="#snescartsatellaviewitems">SNES Cart Satellaview Items</a><br>
+<a href="#snescartsatellaviewsrambatterybacked">SNES Cart Satellaview SRAM (Battery-backed)</a><br>
+<a href="#snescartsatellaviewflashfileheader">SNES Cart Satellaview FLASH File Header</a><br>
+<a href="#snescartsatellaviewbiosfunctionsummary">SNES Cart Satellaview BIOS Function Summary</a><br>
+<a href="#snescartsatellaviewinterpretertokensummary">SNES Cart Satellaview Interpreter Token Summary</a><br>
+<a href="#snescartsatellaviewchipsets">SNES Cart Satellaview Chipsets</a><br>
+<a href="#snescartdatapackslotssatellaviewlikeminicartridgeslot">SNES Cart Data Pack Slots (satellaview-like mini-cartridge slot)</a><br>
+<a href="#snescartnintendopowerflashcard">SNES Cart Nintendo Power (flashcard)</a><br>
+<a href="#snescartnintendopowerioports">SNES Cart Nintendo Power - I/O Ports</a><br>
+<a href="#snescartnintendopowerdirectory">SNES Cart Nintendo Power - Directory</a><br>
+<a href="#snescartsufamiturbominicartridgeadaptor">SNES Cart Sufami Turbo (Mini Cartridge Adaptor)</a><br>
+<a href="#snescartsufamiturbogeneralnotes">SNES Cart Sufami Turbo General Notes</a><br>
+<a href="#snescartsufamiturboromramheaders">SNES Cart Sufami Turbo ROM/RAM Headers</a><br>
+<a href="#snescartsufamiturbobiosfunctionscharset">SNES Cart Sufami Turbo BIOS Functions &amp; Charset</a><br>
+<a href="#snescartxband2400baudmodem">SNES Cart X-Band (2400 baud Modem)</a><br>
+<a href="#snescartxbandmisc">SNES Cart X-Band Misc</a><br>
+<a href="#snescartxbandsmartcardreader">SNES Cart X-Band Smart Card Reader</a><br>
+<a href="#snescartxbandrockwellports">SNES Cart X-Band Rockwell Ports</a><br>
+<a href="#snescartxbandrockwellnotes">SNES Cart X-Band Rockwell Notes</a><br>
+<a href="#snescartflashbackup">SNES Cart FLASH Backup</a><br>
+<a href="#snescartcheatdevices">SNES Cart Cheat Devices</a><br>
+<a href="#snescartcheatdevicescodeformats">SNES Cart Cheat Devices - Code Formats</a><br>
+<a href="#snescartcheatdevicesgamegenie">SNES Cart Cheat Devices - Game Genie</a><br>
+<a href="#snescartcheatdevicesproactionreplayioports">SNES Cart Cheat Devices - Pro Action Replay I/O Ports</a><br>
+<a href="#snescartcheatdevicesproactionreplaymemory">SNES Cart Cheat Devices - Pro Action Replay Memory</a><br>
+<a href="#snescartcheatdevicesxterminatorgamewizard">SNES Cart Cheat Devices - X-Terminator &amp; Game Wizard</a><br>
+<a href="#snescartcheatdevicesgamesaver">SNES Cart Cheat Devices - Game Saver</a><br>
+<a href="#snescartcheatdevicestheory">SNES Cart Cheat Devices - Theory</a><br>
+<a href="#snescarttristarakasuper8allowstoplaynesgamesonthesnes">SNES Cart Tri-Star (aka Super 8) (allows to play NES games on the SNES)</a><br>
+<a href="#snescartpiratexin1multicarts1">SNES Cart Pirate X-in-1 Multicarts (1)</a><br>
+<a href="#snescartpiratexin1multicarts2">SNES Cart Pirate X-in-1 Multicarts (2)</a><br>
+<a href="#snescartcopiers">SNES Cart Copiers</a><br>
+<a href="#snescartcopiersfrontfareastsupermagicomsuperwildcard">SNES Cart Copiers - Front Fareast (Super Magicom &amp; Super Wild Card)</a><br>
+<a href="#snescartcopierscclsupercomprofighter">SNES Cart Copiers - CCL (Supercom &amp; Pro Fighter)</a><br>
+<a href="#snescartcopiersbunggamedoctor">SNES Cart Copiers - Bung (Game Doctor)</a><br>
+<a href="#snescartcopierssuperufo">SNES Cart Copiers - Super UFO</a><br>
+<a href="#snescartcopierssanetingsuperdiskinterceptor">SNES Cart Copiers - Sane Ting (Super Disk Interceptor)</a><br>
+<a href="#snescartcopiersgamarscopier">SNES Cart Copiers - Gamars Copier</a><br>
+<a href="#snescartcopiersvenusmultigamehunter">SNES Cart Copiers - Venus (Multi Game Hunter)</a><br>
+<a href="#snescartcopiersothers">SNES Cart Copiers - Others</a><br>
+<a href="#snescartcopiersmisc">SNES Cart Copiers - Misc</a><br>
+<a href="#snescartcopiersfloppydisccontrollers">SNES Cart Copiers - Floppy Disc Controllers</a><br>
+<a href="#snescartcopiersfloppydiscnecupd765commands">SNES Cart Copiers - Floppy Disc NEC uPD765 Commands</a><br>
+<a href="#snescartcopiersfloppydiscfat12format">SNES Cart Copiers - Floppy Disc FAT12 Format</a><br>
+<a href="#snescartcopiersbioses">SNES Cart Copiers - BIOSes</a><br>
+<a href="#sneshotelboxesandarcademachines">SNES Hotel Boxes and Arcade Machines</a><br>
+<a href="#nssmemoryandiomaps">NSS Memory and I/O Maps</a><br>
+<a href="#nssioportscontrolregisters">NSS I/O Ports - Control Registers</a><br>
+<a href="#nssioportsbuttoninputsandcoincontrol">NSS I/O Ports - Button Inputs and Coin Control</a><br>
+<a href="#nssioportsrtcandosd">NSS I/O Ports - RTC and OSD</a><br>
+<a href="#nssioportseepromandprom">NSS I/O Ports - EEPROM and PROM</a><br>
+<a href="#nssbiosandinstrommaps">NSS BIOS and INST ROM Maps</a><br>
+<a href="#nssinterpretertokens">NSS Interpreter Tokens</a><br>
+<a href="#nsscontrols">NSS Controls</a><br>
+<a href="#nssgamesbiosesandromimages">NSS Games, BIOSes and ROM-Images</a><br>
+<a href="#nsscomponentlists">NSS Component Lists</a><br>
+<a href="#nsspinouts">NSS Pin-Outs</a><br>
+<a href="#nssonscreencontrollerosd">NSS On-Screen Controller (OSD)</a><br>
+<a href="#sfcboxoverview">SFC-Box Overview</a><br>
+<a href="#sfcboxcoprocessorhd64180extendedz80">SFC-Box Coprocessor (HD64180) (extended Z80)</a><br>
+<a href="#sfcboxmemoryiomaps">SFC-Box Memory &amp; I/O Maps</a><br>
+<a href="#sfcboxioportscustomports">SFC-Box I/O Ports (Custom Ports)</a><br>
+<a href="#sfcboxioportshd64180ports">SFC-Box I/O Ports (HD64180 Ports)</a><br>
+<a href="#sfcboxosdchiponscreendisplaycontroller">SFC-Box OSD Chip (On-Screen Display Controller)</a><br>
+<a href="#sfcboxgromformat">SFC-Box GROM Format</a><br>
+<a href="#sfcboxcomponentlistcartridges">SFC-Box Component List (Cartridges)</a><br>
+<a href="#sfcboxcomponentlistconsole">SFC-Box Component List (Console)</a><br>
+<a href="#rtcs3520realtimeclock">RTC S-3520 (Real-Time Clock)</a><br>
+<a href="#z80cpuspecifications">Z80 CPU Specifications</a><br>
+<a href="#z80registerset">Z80 Register Set</a><br>
+<a href="#z80flags">Z80 Flags</a><br>
+<a href="#z80instructionformat">Z80 Instruction Format</a><br>
+<a href="#z80loadcommands">Z80 Load Commands</a><br>
+<a href="#z80arithmeticlogicalcommands">Z80 Arithmetic/Logical Commands</a><br>
+<a href="#z80rotateshiftandsinglebitoperations">Z80 Rotate/Shift and Singlebit Operations</a><br>
+<a href="#z80jumpcommandsinterrupts">Z80 Jumpcommands &amp; Interrupts</a><br>
+<a href="#z80iocommands">Z80 I/O Commands</a><br>
+<a href="#z80interrupts">Z80 Interrupts</a><br>
+<a href="#z80meaninglessandduplicatedopcodes">Z80 Meaningless and Duplicated Opcodes</a><br>
+<a href="#z80garbageinflagregister">Z80 Garbage in Flag Register</a><br>
+<a href="#z80compatibility">Z80 Compatibility</a><br>
+<a href="#z80pinouts">Z80 Pin-Outs</a><br>
+<a href="#z80localusage">Z80 Local Usage</a><br>
+<a href="#hd64180">HD64180</a><br>
+<a href="#hd64180internaliomap">HD64180 Internal I/O Map</a><br>
+<a href="#hd64180newopcodesz80extension">HD64180 New Opcodes (Z80 Extension)</a><br>
+<a href="#hd64180serialioportsasciandcsio">HD64180 Serial I/O Ports (ASCI and CSI/O)</a><br>
+<a href="#hd64180timersprtandfrc">HD64180 Timers (PRT and FRC)</a><br>
+<a href="#hd64180directmemoryaccessdma">HD64180 Direct Memory Access (DMA)</a><br>
+<a href="#hd64180interrupts">HD64180 Interrupts</a><br>
+<a href="#hd64180memorymappingandcontrol">HD64180 Memory Mapping and Control</a><br>
+<a href="#hd64180extensions">HD64180 Extensions</a><br>
+<a href="#snesdecompressionformats">SNES Decompression Formats</a><br>
+<a href="#snesunpredictablethings">SNES Unpredictable Things</a><br>
+<a href="#snestimings">SNES Timings</a><br>
+<a href="#snestimingoscillators">SNES Timing Oscillators</a><br>
+<a href="#snestiminghvcounters">SNES Timing H/V Counters</a><br>
+<a href="#snestiminghvevents">SNES Timing H/V Events</a><br>
+<a href="#snestimingppumemoryaccesses">SNES Timing PPU Memory Accesses</a><br>
+<a href="#snespinouts">SNES Pinouts</a><br>
+<a href="#snescontrollerspinouts">SNES Controllers Pinouts</a><br>
+<a href="#snesaudiovideoconnectorpinouts">SNES Audio/Video Connector Pinouts</a><br>
+<a href="#snespowersupply">SNES Power Supply</a><br>
+<a href="#snesexpansionportextpinouts">SNES Expansion Port (EXT) Pinouts</a><br>
+<a href="#snescartridgeslotpinouts">SNES Cartridge Slot Pinouts</a><br>
+<a href="#sneschipset">SNES Chipset</a><br>
+<a href="#snespinoutscpuchip">SNES Pinouts CPU Chip</a><br>
+<a href="#snespinoutsppuchips">SNES Pinouts PPU Chips</a><br>
+<a href="#snespinoutsapuchips">SNES Pinouts APU Chips</a><br>
+<a href="#snespinoutsromchips">SNES Pinouts ROM Chips</a><br>
+<a href="#snespinoutsramchips">SNES Pinouts RAM Chips</a><br>
+<a href="#snespinoutscicchips">SNES Pinouts CIC Chips</a><br>
+<a href="#snespinoutsmadchips">SNES Pinouts MAD Chips</a><br>
+<a href="#snespinoutsrtcchips">SNES Pinouts RTC Chips</a><br>
+<a href="#snespinoutsmiscchips">SNES Pinouts Misc Chips</a><br>
+<a href="#snespinoutsgsuchips">SNES Pinouts GSU Chips</a><br>
+<a href="#snespinoutscx4chip">SNES Pinouts CX4 Chip</a><br>
+<a href="#snespinoutssa1chip">SNES Pinouts SA1 Chip</a><br>
+<a href="#snespinoutsdecompressionchips">SNES Pinouts Decompression Chips</a><br>
+<a href="#snespinoutsbsxconnectors">SNES Pinouts BSX Connectors</a><br>
+<a href="#snescommonmods">SNES Common Mods</a><br>
+<a href="#snescontrollermods">SNES Controller Mods</a><br>
+<a href="#snesxboouploadwramboot">SNES Xboo Upload (WRAM Boot)</a><br>
+<a href="#cpu65xxmicroprocessor">CPU 65XX Microprocessor</a><br>
+<a href="#cpuregistersandflags">CPU Registers and Flags</a><br>
+<a href="#cpumemoryaddressing">CPU Memory Addressing</a><br>
+<a href="#cpuclockcycles">CPU Clock Cycles</a><br>
+<a href="#cpumemoryandregistertransfers">CPU Memory and Register Transfers</a><br>
+<a href="#cpuarithmeticlogicaloperations">CPU Arithmetic/Logical Operations</a><br>
+<a href="#cpurotateandshiftinstructions">CPU Rotate and Shift Instructions</a><br>
+<a href="#cpujumpandcontrolinstructions">CPU Jump and Control Instructions</a><br>
+<a href="#cpuassemblerdirectivessyntax">CPU Assembler Directives/Syntax</a><br>
+<a href="#cpuglitches">CPU Glitches</a><br>
+<a href="#cputhe65xxfamily">CPU The 65XX Family</a><br>
+<a href="#aboutcredits">About/Credits</a><br>
 <br>
 
 </p></body></html>

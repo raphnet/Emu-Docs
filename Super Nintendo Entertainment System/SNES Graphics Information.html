@@ -39,35 +39,35 @@ the high byte occupies the following memory location.
 
 </p><p><font face="Arial,Helvetica"><font size="+3">Table of Contents</font></font>
 
-</p><p>&nbsp;&nbsp;&nbsp; 1. <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Terminology">SNES Graphics Terminology</a>
-<br>&nbsp;&nbsp;&nbsp; 2. <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#PPUMemoryTypes">Types of PPU memory</a>
-<br>&nbsp;&nbsp;&nbsp; 3. <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#GraphicsOrganization">How basic SNES
+</p><p>&nbsp;&nbsp;&nbsp; 1. <a href="#Terminology">SNES Graphics Terminology</a>
+<br>&nbsp;&nbsp;&nbsp; 2. <a href="#PPUMemoryTypes">Types of PPU memory</a>
+<br>&nbsp;&nbsp;&nbsp; 3. <a href="#GraphicsOrganization">How basic SNES
 graphics are organized in the PPU</a>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.1. <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#BGBasics">BG
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.1. <a href="#BGBasics">BG
 Basics</a>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.2. <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#SpriteBasics">Sprite
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.2. <a href="#SpriteBasics">Sprite
 Basics</a>
-<br>&nbsp;&nbsp;&nbsp; 4. <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#GraphicsFormat">The SNES graphics format</a>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.2 <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Mode7GrFormat">Mode
+<br>&nbsp;&nbsp;&nbsp; 4. <a href="#GraphicsFormat">The SNES graphics format</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.2 <a href="#Mode7GrFormat">Mode
 7 Graphics Format</a>
-<br>&nbsp;&nbsp;&nbsp; 5. <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#RegisterReference">Register Reference</a>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.1 <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#RegOAM">OAM
+<br>&nbsp;&nbsp;&nbsp; 5. <a href="#RegisterReference">Register Reference</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.1 <a href="#RegOAM">OAM
 Registers</a>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.2 <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#RegColor">Color
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.2 <a href="#RegColor">Color
 Registers</a>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.3 <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#RegVRAM">VRAM
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.3 <a href="#RegVRAM">VRAM
 Transfer Control Registers</a>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.4 <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#RegVideo">Video
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.4 <a href="#RegVideo">Video
 Registers</a>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.5 <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#RegCounter">Counter/IRQ/VBL/NMI
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.5 <a href="#RegCounter">Counter/IRQ/VBL/NMI
 registers</a>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.6 <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#RegWindows">Windowing
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.6 <a href="#RegWindows">Windowing
 registers</a>
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.7 <a href="http://emu-docs.org/Super%20NES/General/RegJoypad">Joypad
 registers</a>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.8 <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#RegDMA">DMA
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.8 <a href="#RegDMA">DMA
 Registers</a>
-<br>&nbsp;&nbsp;&nbsp; 6. <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#DMATransfers">DMA/HDMA tutorial and
+<br>&nbsp;&nbsp;&nbsp; 6. <a href="#DMATransfers">DMA/HDMA tutorial and
 reference</a>
 </p><center>&nbsp;</center>
 
@@ -134,8 +134,8 @@ are stored, as well as the registers (located in the reserved 65816 address
 space between $2000 and $5FFF) which set certain screen parameters.
 
 </p><p>The main data area is the VRAM, a 64 KB memory space that can be accessed
-with registers <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Reg2115">$2115</a>, $<a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Reg2116">2116</a>,
-$<a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Reg2118">2118</a>, and $<a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Reg2139">2139</a>.&nbsp; This
+with registers <a href="#Reg2115">$2115</a>, $<a href="#Reg2116">2116</a>,
+$<a href="#Reg2118">2118</a>, and $<a href="#Reg2139">2139</a>.&nbsp; This
 area is used for storing all the tiles used in your game, as well as the
 tile maps.
 
@@ -157,9 +157,9 @@ Organization</font></center>
 
 <p><a name="BGBasics"></a><font size="+1">Basics of BGs</font>
 
-</p><p>In <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#PPUMemoryTypes">VRAM</a> there is a two-dimensional array
-that is a <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Terminology">map</a> of the tiles on the screen. Depending
-on the setting of <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Reg2107">registers $2107 to $210A</a>, this
+</p><p>In <a href="#PPUMemoryTypes">VRAM</a> there is a two-dimensional array
+that is a <a href="#Terminology">map</a> of the tiles on the screen. Depending
+on the setting of <a href="#Reg2107">registers $2107 to $210A</a>, this
 map may be 32x32, 32x64, 64x32 or 64x64 tiles in size (see a note in the
 register description about the format of maps larger than 32 tiles wide
 or high).&nbsp; Each of the entries in this map contain the following data:
@@ -167,20 +167,20 @@ or high).&nbsp; Each of the entries in this map contain the following data:
 vhopppcc cccccccc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h: horizontal flip&nbsp; v: vertical flip
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p: palette number&nbsp;&nbsp; o: priority bit</pre>
 The character number indexes into an "array of tiles" starting at a base
-VRAM location selected by <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Reg210B">registers $210B or $210C</a>.
+VRAM location selected by <a href="#Reg210B">registers $210B or $210C</a>.
 The byte address in VRAM where the character data starts can be found using
 the following calculation:
 <br>&nbsp;&nbsp;&nbsp; address_of_character = (base_location_bits &lt;&lt;
 13) + (8 * color_depth * character_number);
-<br>This formula works in both 8x8 and <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Reg2107">16x16 tile mode</a>.&nbsp;
+<br>This formula works in both 8x8 and <a href="#Reg2107">16x16 tile mode</a>.&nbsp;
 For example, if base location 1 is selected, the color depth for the tile
 map is 4 bits (16 colors), and character number 1 is selected, the address
 will be (1&lt;&lt;13)+8*4*1 = 8224.
-<br>Note that the word address entered into the <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Reg2116">VRAM
+<br>Note that the word address entered into the <a href="#Reg2116">VRAM
 address register</a> will be half of that, or 4112.
 
-<p>Except when using 256-color <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Terminology">BGs</a>, the palette
-bits determine what colors in the <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Terminology">CGRAM</a> will
+<p>Except when using 256-color <a href="#Terminology">BGs</a>, the palette
+bits determine what colors in the <a href="#Terminology">CGRAM</a> will
 be mapped to the colors in the character. The number formed by the palette
 bits is multiplied by the number of colors in the BG to get the starting
 index in the color palette. For example, if palette 3 is selected in 16
@@ -188,7 +188,7 @@ color mode, the tile's colors will range from CG entries 48 to 63.&nbsp;
 However, entry #48 will be unused since this is mapped from color 0, which
 is always the 'transparent color'.&nbsp; Notice that, except in a 256-color
 mode, it is not possible to select colors above 127.&nbsp; That's okay;
-the sprites use these colors.&nbsp; Also, except in Mode 0 (see <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Reg2105">register
+the sprites use these colors.&nbsp; Also, except in Mode 0 (see <a href="#Reg2105">register
 $2105</a>), four color BGs may only use colors 1 to 31.
 
 </p><p>The horizontal and vertical flip bits, if set to 1, will cause the characters
@@ -197,18 +197,18 @@ direction. When in 16x16 tile mode, the entire tile is flipped (pixel 0
 is swapped with pixel 15) rather than the individual 8x8 sub tiles being
 flipped.
 
-</p><p>The <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Terminology">priority</a> bit has the effect of deciding
+</p><p>The <a href="#Terminology">priority</a> bit has the effect of deciding
 whether a given tile is 'on top of' or behind other BGs and sprites.&nbsp;
-For more information on the drawing order, see bit 3 of <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Reg2105">register
+For more information on the drawing order, see bit 3 of <a href="#Reg2105">register
 $2105</a>.
 
 </p><p><a name="SpriteBasics"></a><font size="+1">Basics of sprites</font>
 
-</p><p>All SNES <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Terminology">sprites</a> are 16 colors.&nbsp; The
+</p><p>All SNES <a href="#Terminology">sprites</a> are 16 colors.&nbsp; The
 SNES can have two sizes of sprites on the screen at once; the two sizes
-are selected with bits 5-7 of <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Reg2101">register $2101</a>.&nbsp;
-The <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Terminology">character data</a> for sprites is stored in
-<a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#PPUMemoryTypes">VRAM</a>, in the same format as <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Terminology">BG</a>
+are selected with bits 5-7 of <a href="#Reg2101">register $2101</a>.&nbsp;
+The <a href="#Terminology">character data</a> for sprites is stored in
+<a href="#PPUMemoryTypes">VRAM</a>, in the same format as <a href="#Terminology">BG</a>
 tiles.&nbsp; Two or more sprites can share the same set of tiles.&nbsp;
 When the sprites are larger than 8x8, they are arranged in columns, followed
 by rows of 8x8 tiles.&nbsp; For example, a 32x32 sprite is stored like
@@ -228,8 +228,8 @@ VRAM, it would have to be stored like this:
 In practice, the sprites are interleaved.&nbsp; In other words, when using
 32x32 tiles, there would be 3 more sprites stored in that "unused" space.&nbsp;
 If the first sprite, shown in the above table, started at offset 0, the
-next sprite would start at offset 128 (the <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#SpriteBasics_CharNum">Character
-Number</a>, in <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#PPUMemoryTypes">OAM</a>, would be 4); the third
+next sprite would start at offset 128 (the <a href="#SpriteBasics_CharNum">Character
+Number</a>, in <a href="#PPUMemoryTypes">OAM</a>, would be 4); the third
 sprite would start at offset 256 (Character #8), and the fourth sprite
 would start at offset 384 (Character #12).&nbsp; If a fifth sprite was
 desired, the pattern would repeat and it would be located at offset 2048
@@ -256,25 +256,25 @@ The second table is 32 bytes and has 2 bits for each sprite (each byte
 contains information for 4 sprites.)&nbsp; The lowest significant bits
 hold the information for the lower object numbers (for example, the least
 significant two bits of the first byte are for object #0.)&nbsp; Bit 0
-(and 2, 4, 6) is the size toggle bit (see bits 5-7 of <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Reg2101">register
+(and 2, 4, 6) is the size toggle bit (see bits 5-7 of <a href="#Reg2101">register
 $2101</a>) and bit 1 (3, 5, 7) is the most ignificant bit of the X coordinate.
 
 <p>The vertical and horizontal flips work similarly to flips in the BGs;
 the entire sprite is flipped so that the leftmost pixel is swapped with
 the rightmost pixel, etc.&nbsp; To see the effect of the priority bits,
-see the description of <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Reg2105">register $2105</a>.&nbsp; The
+see the description of <a href="#Reg2105">register $2105</a>.&nbsp; The
 palettes start at CG entry 128, so that palette 0 is colors 128 to 143,
 and palette 1 consists of colors 144 to 159.
 
 </p><p><a name="SpriteBasics_CharNum"></a>The character number indexes into
 an array of 8x8 tiles starting at a base VRAM location selected by bits
-0-2 of <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Reg2101">register $2101</a>. The byte address in VRAM
+0-2 of <a href="#Reg2101">register $2101</a>. The byte address in VRAM
 where the character data starts can be found using the following calculation:
 <br>&nbsp;&nbsp;&nbsp; address_of_character = (base_location_bits &lt;&lt;
 14) + (32 * character_number);
 <br>For example, if base location 1 is selected, and character number 1
 is selected, the address will be 16384+32*1 = 16416.&nbsp; Note that the
-word address entered into the <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Reg2116">VRAM address register</a>
+word address entered into the <a href="#Reg2116">VRAM address register</a>
 will be half of that, or 8208.
 
 </p><p>Notice that two or more sprites in the OAM table may have the same character
@@ -284,21 +284,21 @@ be mirrored independently and have different palettes.
 </p><p><a name="ColorPalettes"></a><font size="+1">Color palettes</font>
 
 </p><p>Once the final color value is derived from the character data and 'palette
-number' for the sprite or <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Terminology">BG</a>, it is indexed
-into the <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#PPUMemoryTypes">CGRAM</a> color palette array.&nbsp;
+number' for the sprite or <a href="#Terminology">BG</a>, it is indexed
+into the <a href="#PPUMemoryTypes">CGRAM</a> color palette array.&nbsp;
 There are 512 bytes of CGRAM, with each of the 256 colors using two bytes.&nbsp;
 Each of the palette entries is formatted like this:
 </p><pre>?bbbbbgg gggrrrrr&nbsp;&nbsp;&nbsp; ?: Unused and ignored&nbsp; b: Blue intensity
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; g: Green intensity&nbsp;&nbsp;&nbsp;&nbsp; r: Red intensity</pre>
 (Notice this is backwards to the conventional RGB format.)&nbsp; To upload
 palette entries to CGRAM, select the color with register $2121, and then
-begin sending the bytes to <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Reg2122">register $2122</a>.
+begin sending the bytes to <a href="#Reg2122">register $2122</a>.
 <br>&nbsp;
 <center><a name="GraphicsFormat"></a><font size="+3">The SNES Graphics Format</font></center>
 
 
-<p>All SNES graphics (except in <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Terminology">BG</a>1 of Mode
-7) are made up of <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Terminology">Tiles</a>, also called character
+<p>All SNES graphics (except in <a href="#Terminology">BG</a>1 of Mode
+7) are made up of <a href="#Terminology">Tiles</a>, also called character
 data.&nbsp; The basic tile is 8x8 in size, and larger bitmaps are stored
 in the form of two-dimensional arrays of these small tiles.&nbsp; On most
 computers, bitmaps are stored in a packed format: the color bits are grouped
@@ -323,7 +323,7 @@ of plane 1.&nbsp; If using more than 4 colors, the pattern repeats; byte
 eight pixels of plane 3.
 
 <p>When the tile is to be displayed on the screen, a bit is taken from
-each of the planes to form a 2-, 4-, or 8-bit value to index into the <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#ColorPalettes">color
+each of the planes to form a 2-, 4-, or 8-bit value to index into the <a href="#ColorPalettes">color
 palette</a>.&nbsp; The first tile (plane 0) contains the least significant
 bit of the color, and the last tile contains the most significant bit.
 
@@ -356,7 +356,7 @@ bit.
 find an error.&nbsp; W means writeable; R means readable.&nbsp; 2b means
 the register is one word in size;&nbsp; Db means that it is a one-byte
 register that must be written or read twice.&nbsp; In contrast to the Y0shi
-Doc, auto-incrementing registers such as <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Reg2122">$2122</a> are
+Doc, auto-incrementing registers such as <a href="#Reg2122">$2122</a> are
 not considered Db registers, because they can be written any number of
 times (writing one byte will work just as well as writing two, or writing
 a hundred.)
@@ -426,7 +426,7 @@ write or read will be to the following byte.
 Address for accessing CGRAM (1b/W)</font></b>
 </p><pre>aaaaaaaa a: CGRAM word address</pre>
 This register selects the&nbsp; word location (byte address * 2) to begin
-uploading (or downloading) data to CGRAM. Click <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#ColorPalettes">HERE</a>
+uploading (or downloading) data to CGRAM. Click <a href="#ColorPalettes">HERE</a>
 for more information on color palettes.
 
 <p><a name="Reg2122"></a><b><font face="Lucida Console">Register $2122:
@@ -474,7 +474,7 @@ tiles between them.&nbsp; (At least that's how it works when in 16-color
 mode; I haven't figured out if it's the same for 4 or 256 colors but it's
 very likely.)
 
-</p><p>For more information on the tile map format, see <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#BGBasics">BG
+</p><p>For more information on the tile map format, see <a href="#BGBasics">BG
 Basics</a>.
 
 </p><p><a name="Reg210B"></a><b><font face="Lucida Console">Register $210B/$210C:
@@ -486,7 +486,7 @@ The byte address is calculated by shifting the four bits left by 13 (multiplying
 by 8192).&nbsp; Note that, since there is only 64K of VRAM, the highest
 of the four bits must be set to 0.
 
-<p>For more information on storing characters, see <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#GraphicsFormat">The
+<p>For more information on storing characters, see <a href="#GraphicsFormat">The
 SNES Graphics Format</a>.
 
 </p><p><a name="Reg2115"></a><b><font face="Lucida Console">Register $2115:
@@ -525,14 +525,14 @@ No "dummy write" is required, however.
 VRAM data write (2b/W)</font></b>
 </p><pre>dddddddd dddddddd&nbsp; d: data to write to VRAM</pre>
 When written, this register writes a byte or word to VRAM.&nbsp; The address
-is incremented (or not, as the case may be) according to <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Reg2115">register
+is incremented (or not, as the case may be) according to <a href="#Reg2115">register
 $2115</a>.
 
 <p><a name="Reg2139"></a><b><font face="Lucida Console">Register $2139/$213A:
 VRAM data read (2b/R)</font></b>
 </p><pre>dddddddd dddddddd&nbsp; d: data read from VRAM</pre>
 When read from, this register downloads a byte or word from VRAM.&nbsp;
-The address is incremented according to the settings of <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Reg2115">register
+The address is incremented according to the settings of <a href="#Reg2115">register
 $2115</a>.
 <center>&nbsp;</center>
 
@@ -548,7 +548,7 @@ This register is used for screen fades.
 <p><a name="Reg2105"></a><b><font face="Lucida Console">Register $2105:
 Screen mode register (1b/W)</font></b>
 </p><pre>dcbapmmm&nbsp; d: BG4 tile size&nbsp; c: BG3 tile size&nbsp; b: BG2 tile size
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a: BG1 tile size&nbsp; Sizes are: 0=8x8; 1=16x16. (See <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Reg2107">reg. $2107</a>)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a: BG1 tile size&nbsp; Sizes are: 0=8x8; 1=16x16. (See <a href="#Reg2107">reg. $2107</a>)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p: order of BG priorities&nbsp; m: General screen mode</pre>
 This register determines the size of tile represented by one entry in the
 tile map array, the order that BGs are drawn on the screen, and the screen
@@ -567,7 +567,7 @@ a Mode 7 screen but more than one BG either use sprites to simulate a BG,
 or switch video modes midframe via HDMA.
 
 <p>The p (priority bit) affects the order in which BGs are drawn on the
-screen, as follows ("o" refers to the setting of bit 13 of the <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#BGBasics">tile
+screen, as follows ("o" refers to the setting of bit 13 of the <a href="#BGBasics">tile
 map</a>):
 </p><pre>p (Priority) 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1
 Drawn first&nbsp; BG4, o=0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BG4, o=0
@@ -657,7 +657,7 @@ a: Clip Window 1 in or out&nbsp;&nbsp; 1=out)</tt>
 
 </p><p>These registers determine which Windows to apply to which BGs, and whether
 clipping should be performed inside or outside the window.&nbsp; To enable
-windowing, the appropriate bits in <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Reg212E">registers $212E and
+windowing, the appropriate bits in <a href="#Reg212E">registers $212E and
 $212F</a> must be set in addition to the bits in these registers.
 
 </p><p><a name="Reg2125"></a><b><font face="Lucida Console">Register $2125:
@@ -666,7 +666,7 @@ Window mask settings #2 (1b/W)</font></b>
 </p><p><tt>ccccssss&nbsp; c: Settings for "color windows"&nbsp; s: Settings
 for sprite windows</tt>
 
-</p><p><tt>Both of these sets of four bits are formatted the same as <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Reg2123">registers
+</p><p><tt>Both of these sets of four bits are formatted the same as <a href="#Reg2123">registers
 $2123 and $2124</a>.</tt>
 
 </p><p>This is like the last set of registers except it is for sprites and
@@ -725,7 +725,7 @@ enable</tt>
 b: BG2 enable&nbsp; a: BG1 enable</tt>
 
 </p><p>These registers are formatted the same as the visibility designation
-<a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Reg212C">registers $212C and $212D</a>.&nbsp; A bit must be set
+<a href="#Reg212C">registers $212C and $212D</a>.&nbsp; A bit must be set
 in both $212C and $212E or $212D or $212E in order for windows to be enabled
 for that layer (BG or sprites).
 <br>&nbsp;
@@ -787,15 +787,15 @@ IRQ Register (1b/RW?)</font></b>
 </p><pre>i-------&nbsp; i: irq flag</pre>
 The full behavior of these bits is not known (at least, I don't know),
 so take this description with a big grain of salt.&nbsp; If bits 4/5 of
-<a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Reg4200">register $4200</a> are set, then as soon as the H/V
-counter timer becomes the count value set in <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Reg4207">registers
+<a href="#Reg4200">register $4200</a> are set, then as soon as the H/V
+counter timer becomes the count value set in <a href="#Reg4207">registers
 $4207 to $420A</a>, then an IRQ will be "applied" (unless the CPU interrupt
 flag is enabled.&nbsp; If this is the case, then the interrupt will be
 called as soon as the flag is cleared.)&nbsp; The IRQ routine must immediately
 use SEI to prevent recursive calling, then read from this register to "un-apply"
 the interrupt.&nbsp; The first read will return 1 in the i bit, then subsequent
 reads will return 0.&nbsp; What happens to this register when bits 4/5
-of <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Reg4200">register $4200</a> are <i>not</i> set is unclear.
+of <a href="#Reg4200">register $4200</a> are <i>not</i> set is unclear.
 Some SNES programs use a loop to read this register (in emu's, often getting
 stuck in this loop) but why a loop is used is unknown.
 
@@ -839,11 +839,11 @@ r: Right</tt>
 L: Top-left button R: Top-right button</tt>
 <br><tt>AXLR????</tt>
 
-</p><p>This is the easy way to read the joypad.&nbsp; Simply set bit 0 of <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Reg4200">register
+</p><p>This is the easy way to read the joypad.&nbsp; Simply set bit 0 of <a href="#Reg4200">register
 $4200</a>, and the SNES will automatically read the state of all the buttons
 (probably once every frame) into these registers.&nbsp; These registers
 may be read more than once; that is, reading these registers does not destroy
-their values.&nbsp; It is best to wait for bit 0 of <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Reg4212">register
+their values.&nbsp; It is best to wait for bit 0 of <a href="#Reg4212">register
 $4212</a> to be set (set or cleared?&nbsp; I'm not sure) before reading
 from these registers.
 
@@ -902,7 +902,7 @@ read #17 returns whether or not the joypad is connected (0 if not connected.)
 <br>&nbsp;
 </p><center><a name="RegDMA"></a><font size="+2">DMA Registers</font></center>
 
-<center>See also <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#DMATransfers">DMA Transfer Information</a>.</center>
+<center>See also <a href="#DMATransfers">DMA Transfer Information</a>.</center>
 &nbsp;
 <br><a name="Reg420B"></a><b><font face="Lucida Console">Register $420B:
 Start DMA transfer (1b/W)</font></b>
@@ -1007,7 +1007,7 @@ and Indirect HDMA.&nbsp; (In Indirect HDMA, this register could also be
 called the "pointer before indirection".)
 
 </p><p>Since this is a two and not three-byte register, the bank value should
-be taken from <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Reg43x2">$43?4</a>.
+be taken from <a href="#Reg43x2">$43?4</a>.
 
 </p><p><a name="Reg43xA"></a><b><font face="Lucida Console">Register $43?A:
 Scanlines left (1b/RW?)</font></b>
@@ -1016,7 +1016,7 @@ Scanlines left (1b/RW?)</font></b>
 
 </p><p>This register is a countdown that contains the number of scanlines remaining
 until the next segment of a HDMA table is executed.&nbsp; When this counter
-reaches 0, the pointer contained in <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Reg43x8">register $43?8</a>
+reaches 0, the pointer contained in <a href="#Reg43x8">register $43?8</a>
 is advanced to the next count value in the HDMA table, and this register
 is loaded with the count value for the next segment of the table.
 
@@ -1057,7 +1057,7 @@ quite straightforward. The SNES program simply puts a source address into
 $43?2, a destination address into $43?1 and the number of bytes to copy
 into $43?5.&nbsp; The reason $43?1 is only a one-byte register is because
 the high byte is always $21; e.g. if you set it to $18, the transfer destination
-will be $2118.&nbsp; The <a href="http://emu-docs.org/Super%20NES/General/snesdoc.html#Reg43x0">DMA control register</a> controls
+will be $2118.&nbsp; The <a href="#Reg43x0">DMA control register</a> controls
 how the bytes will be transferred.&nbsp; Using the previous example, setting
 it to one(1) will cause bytes written to alternate between $2118 and $2119.&nbsp;
 Use $43?0 to start a transfer.&nbsp; For instance, if you were using DMA
